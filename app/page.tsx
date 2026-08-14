@@ -110,17 +110,17 @@ const storyBeats: StoryBeat[] = [
 ];
 
 const nodes: MapNode[] = [
-  { id: "cold-war", label: "Cold War", type: "idea", icon: "✦", x: 50, y: 8 },
-  { id: "moscow", label: "Moscow", type: "place", icon: "МОСКВА", x: 17, y: 24 },
+  { id: "cold-war", label: "Cold War", type: "idea", image: "cold-war.jpg", x: 50, y: 8 },
+  { id: "moscow", label: "Moscow", type: "place", image: "moscow-kremlin.jpg", x: 17, y: 24 },
   { id: "exhibition", label: "U.S. Exhibition", type: "event", image: "kitchen-debate.jpg", x: 50, y: 25 },
-  { id: "ampex", label: "Ampex videotape", type: "thing", icon: "AMPEX", x: 83, y: 24 },
+  { id: "ampex", label: "Ampex videotape", type: "thing", image: "ampex-videotape.jpg", x: 83, y: 24 },
   { id: "nixon", label: "Richard Nixon", type: "person", image: "richard-nixon.jpg", x: 28, y: 46 },
   { id: "khrushchev", label: "Nikita Khrushchev", type: "person", image: "nikita-khrushchev.jpg", x: 72, y: 46 },
-  { id: "pepsi", label: "A cup of Pepsi", type: "thing", icon: "PEPSI", x: 50, y: 60 },
-  { id: "vodka", label: "Stolichnaya", type: "thing", icon: "VODKA", x: 17, y: 73 },
-  { id: "soviet-trade", label: "Barter deal", type: "idea", icon: "⇄", x: 83, y: 73 },
-  { id: "fleet", label: "The Pepsi fleet", type: "thing", icon: "≋", x: 34, y: 90 },
-  { id: "putin", label: "Vladimir Putin", type: "person", icon: "VP", x: 70, y: 90 },
+  { id: "pepsi", label: "A cup of Pepsi", type: "thing", image: "vintage-pepsi-cans.jpg", x: 50, y: 60 },
+  { id: "vodka", label: "Stolichnaya", type: "thing", image: "stolichnaya.jpg", x: 17, y: 73 },
+  { id: "soviet-trade", label: "Barter deal", type: "idea", image: "barter.jpg", x: 83, y: 73 },
+  { id: "fleet", label: "The Pepsi fleet", type: "thing", image: "pepsi-fleet.jpg", x: 34, y: 90 },
+  { id: "putin", label: "Vladimir Putin", type: "person", image: "vladimir-putin.jpg", x: 70, y: 90 },
 ];
 
 const connections = [
@@ -237,7 +237,7 @@ export default function Home() {
               return (
                 <button
                   key={`${node.id}-${revealed ? activeIndex : "hidden"}`}
-                  className={`map-node ${node.type} ${revealed ? "revealed" : ""} ${active ? "active" : ""}`}
+                  className={`map-node node-${node.id} ${node.type} ${revealed ? "revealed" : ""} ${active ? "active" : ""}`}
                   style={{ left: `${node.x}%`, top: `${node.y}%`, "--draw-delay": `${(nodeIndex % 3) * 120}ms` } as React.CSSProperties}
                   onClick={() => revealed && setSelectedNode(node.id === selectedNode ? null : node.id)}
                   aria-label={`${node.label}, ${node.type}`}
