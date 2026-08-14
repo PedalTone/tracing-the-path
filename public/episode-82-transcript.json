@@ -1,0 +1,2206 @@
+{
+  "episode": 82,
+  "title": "When Pepsi Cracked the Iron Curtain",
+  "host": "Dan R. Morris",
+  "duration": 2502.38,
+  "generatedBy": "whisper.cpp small.en",
+  "reviewStatus": "Machine transcript with manually reviewed proper-name corrections",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 10.88,
+      "text": "What if the 1959 kitchen debates between the vice president of the United States, Richard"
+    },
+    {
+      "id": 1,
+      "start": 10.88,
+      "end": 18.44,
+      "text": "Nixon, and the head of Russia, Nikita Khrushchev, weren't about communism and capitalism at"
+    },
+    {
+      "id": 2,
+      "start": 18.44,
+      "end": 28.04,
+      "text": "all? But instead, what if that moment was the crossroad between videotape, vodka, and"
+    },
+    {
+      "id": 3,
+      "start": 28.04,
+      "end": 32.84,
+      "text": "Pepsi? Well, it certainly was."
+    },
+    {
+      "id": 4,
+      "start": 32.84,
+      "end": 38.26,
+      "text": "The story you're about to hear has never been told before. You're listening to the 82nd"
+    },
+    {
+      "id": 5,
+      "start": 38.26,
+      "end": 44.68,
+      "text": "episode of Tracing the Path, a podcast that connects the most important people, places,"
+    },
+    {
+      "id": 6,
+      "start": 44.68,
+      "end": 50.92,
+      "text": "and events of the 20th century in ways you never could have imagined. I'm your host,"
+    },
+    {
+      "id": 7,
+      "start": 50.92,
+      "end": 52.84,
+      "text": "Dan R. Morris. Welcome."
+    },
+    {
+      "id": 8,
+      "start": 58.04,
+      "end": 66.84,
+      "text": "Throughout the history of the world, the United States and Russia have been enemies"
+    },
+    {
+      "id": 9,
+      "start": 66.84,
+      "end": 75.2,
+      "text": "only once. And to add to that, they weren't even military adversaries. They were ideological"
+    },
+    {
+      "id": 10,
+      "start": 75.2,
+      "end": 85.32,
+      "text": "foes. That period existed from 1944 to 1991, and has had somewhat of resurgence since"
+    },
+    {
+      "id": 11,
+      "start": 85.32,
+      "end": 95.16,
+      "text": "2022. Otherwise, they have remained neutral acquaintances, and sometimes military allies."
+    },
+    {
+      "id": 12,
+      "start": 95.16,
+      "end": 103.6,
+      "text": "Historically, the relationship began in 1763, when American merchants docked in St. Petersburg"
+    },
+    {
+      "id": 13,
+      "start": 103.6,
+      "end": 110.4,
+      "text": "in hopes of trading their wares. Having been to the West Indies, American ships were carrying"
+    },
+    {
+      "id": 14,
+      "start": 110.4,
+      "end": 119.14,
+      "text": "sugar, indigo, tobacco, rum, rice, mahogany, and sassafras. And in return, they left with"
+    },
+    {
+      "id": 15,
+      "start": 119.14,
+      "end": 127.4,
+      "text": "flax canvas, hemp, iron, and fur. For Catherine the Great, America's revolution"
+    },
+    {
+      "id": 16,
+      "start": 127.4,
+      "end": 133.06,
+      "text": "to break away from the British crown wasn't ideal. She was not interested in backing a"
+    },
+    {
+      "id": 17,
+      "start": 133.06,
+      "end": 140.18,
+      "text": "revolt. But America would be a new trading partner. Plus, as long as Great Britain was"
+    },
+    {
+      "id": 18,
+      "start": 140.18,
+      "end": 146.74,
+      "text": "tied up with America, it posed less of a threat to Russia. Except for the part where Great"
+    },
+    {
+      "id": 19,
+      "start": 146.74,
+      "end": 152.2,
+      "text": "Britain caused great problems for commercial boats looking to trade."
+    },
+    {
+      "id": 20,
+      "start": 152.2,
+      "end": 159.46,
+      "text": "Thus, while she didn't publicly support America, Catherine the Great also turned down Great"
+    },
+    {
+      "id": 21,
+      "start": 159.46,
+      "end": 166.16,
+      "text": "Britain when they asked if they could borrow 20,000 troops to help get the Americans back"
+    },
+    {
+      "id": 22,
+      "start": 166.16,
+      "end": 171.74,
+      "text": "in line. The situation was similar a hundred years later,"
+    },
+    {
+      "id": 23,
+      "start": 171.74,
+      "end": 180.18,
+      "text": "in 1863, when the US was involved in its own civil war. Then, Czar Alexander II was head"
+    },
+    {
+      "id": 24,
+      "start": 180.18,
+      "end": 187.74,
+      "text": "of Russia. He also didn't publicly support Abraham Lincoln's Union. But when Great Britain"
+    },
+    {
+      "id": 25,
+      "start": 187.74,
+      "end": 195.2,
+      "text": "and France were starting to discuss the possibility of recognizing the Southern Confederacy, Russia"
+    },
+    {
+      "id": 26,
+      "start": 195.2,
+      "end": 203.24,
+      "text": "sent navy ships to New York and San Francisco as a gesture of goodwill. But perhaps also"
+    },
+    {
+      "id": 27,
+      "start": 203.24,
+      "end": 209.7,
+      "text": "a kind of show of strength. Russia's adversarial relationship with Great"
+    },
+    {
+      "id": 28,
+      "start": 209.7,
+      "end": 215.66,
+      "text": "Britain created another opportunity for America. With the feeling that they wouldn't be able"
+    },
+    {
+      "id": 29,
+      "start": 215.66,
+      "end": 222.7,
+      "text": "to properly defend their territory of Alaska, since it was right next to Britain's Canada,"
+    },
+    {
+      "id": 30,
+      "start": 222.7,
+      "end": 229.62,
+      "text": "they sold Alaska to the United States. For most of the time, US and Russia relations"
+    },
+    {
+      "id": 31,
+      "start": 229.62,
+      "end": 237.58,
+      "text": "were fine. By 1890, companies like Singer Sewing Machines, Westinghouse, and MetLife"
+    },
+    {
+      "id": 32,
+      "start": 237.58,
+      "end": 244.02,
+      "text": "all had subsidiaries in Russia and were doing business. The only real reason any trading"
+    },
+    {
+      "id": 33,
+      "start": 244.02,
+      "end": 251.02,
+      "text": "would stop would be by the natural advancements that came over time. For instance, the trade"
+    },
+    {
+      "id": 34,
+      "start": 251.02,
+      "end": 258.7,
+      "text": "for hemp with Russia was strong until manila rope became a viable alternative. And flax"
+    },
+    {
+      "id": 35,
+      "start": 258.7,
+      "end": 266.54,
+      "text": "canvas remained a strong trading product until cotton in the US south began to dominate."
+    },
+    {
+      "id": 36,
+      "start": 266.54,
+      "end": 272.66,
+      "text": "And importing iron for Russia became too expensive once the US canal and railroad options had"
+    },
+    {
+      "id": 37,
+      "start": 272.66,
+      "end": 282.74,
+      "text": "been completed. By 1912, Singer Sewing Machines alone had 30-40,000 employees in Russia. It"
+    },
+    {
+      "id": 38,
+      "start": 282.74,
+      "end": 289.22,
+      "text": "had hundreds of retail locations and factories, so much so that Russians called any sewing"
+    },
+    {
+      "id": 39,
+      "start": 289.22,
+      "end": 296.5,
+      "text": "machine a Singer. The Russian ruble, which was tied to the gold standard, was one of"
+    },
+    {
+      "id": 40,
+      "start": 296.5,
+      "end": 303.62,
+      "text": "Europe's strongest currencies. But when World War I rolled around in 1914,"
+    },
+    {
+      "id": 41,
+      "start": 303.62,
+      "end": 310.58,
+      "text": "everything started to change, because Russia needed its gold to finance the war, and thus"
+    },
+    {
+      "id": 42,
+      "start": 310.58,
+      "end": 317.34,
+      "text": "it took the ruble off the gold standard. And then after the war in a somewhat shattered"
+    },
+    {
+      "id": 43,
+      "start": 317.34,
+      "end": 324.94,
+      "text": "place when rest and rebuilding was required, that is when Lenin and the Bolsheviks began"
+    },
+    {
+      "id": 44,
+      "start": 324.94,
+      "end": 344.86,
+      "text": "their revolution, leading to the reign of Vladimir Lenin."
+    },
+    {
+      "id": 45,
+      "start": 344.86,
+      "end": 351.5,
+      "text": "Lenin's view of the world changed Russia's relationship with the world completely. He"
+    },
+    {
+      "id": 46,
+      "start": 351.5,
+      "end": 357.94,
+      "text": "believed private ownership of industry should end, and should be the business of the state."
+    },
+    {
+      "id": 47,
+      "start": 357.94,
+      "end": 364.78,
+      "text": "So overnight, Singer Sewing Machines lost its factories, Westinghouse lost its investment,"
+    },
+    {
+      "id": 48,
+      "start": 364.78,
+      "end": 372.26,
+      "text": "and MetLife lost everything they had. That would be the end of foreign products in"
+    },
+    {
+      "id": 49,
+      "start": 372.26,
+      "end": 376.74,
+      "text": "Russia. At that point, pretty much everything had come"
+    },
+    {
+      "id": 50,
+      "start": 376.74,
+      "end": 382.02,
+      "text": "under state control. Alcohol, for instance, had already been under state control when"
+    },
+    {
+      "id": 51,
+      "start": 382.02,
+      "end": 389.02,
+      "text": "they passed that law in 1896. But when Lenin took over, the alcohol industry"
+    },
+    {
+      "id": 52,
+      "start": 389.02,
+      "end": 395.26,
+      "text": "had been shut down. A dry law had been passed right before World War I to make sure their"
+    },
+    {
+      "id": 53,
+      "start": 395.26,
+      "end": 401.86,
+      "text": "soldiers were not inebriated before going to war, and to make sure they could make Molotov"
+    },
+    {
+      "id": 54,
+      "start": 401.86,
+      "end": 407.18,
+      "text": "cocktails with the factories that produced vodka."
+    },
+    {
+      "id": 55,
+      "start": 407.18,
+      "end": 414.5,
+      "text": "But after the war, Lenin reopened the alcohol industry and built a massive Moscow State"
+    },
+    {
+      "id": 56,
+      "start": 414.5,
+      "end": 423.38,
+      "text": "warehouse that employed 1500 people and produced 26 million liters of vodka in his first year."
+    },
+    {
+      "id": 57,
+      "start": 423.38,
+      "end": 429.38,
+      "text": "The vodka it produced and delivered to the Kremlin was called the vodka of the capital,"
+    },
+    {
+      "id": 58,
+      "start": 429.38,
+      "end": 445.54,
+      "text": "or rather in Russian it was called Stolichnaya. One of the side effects of pushing out foreign"
+    },
+    {
+      "id": 59,
+      "start": 445.54,
+      "end": 453.46,
+      "text": "companies from inside of Russia was the new cultural gap that would begin to form, where"
+    },
+    {
+      "id": 60,
+      "start": 453.46,
+      "end": 462.1,
+      "text": "no news left Russia and no news entered Russia. Even companies like Pathé, which was France's"
+    },
+    {
+      "id": 61,
+      "start": 462.1,
+      "end": 470.26,
+      "text": "largest filmmaker, they had theaters in Russia. But after Lenin took over, there were no new"
+    },
+    {
+      "id": 62,
+      "start": 470.26,
+      "end": 477.42,
+      "text": "foreign films being shown. For the rest of Europe, Pathé theaters were"
+    },
+    {
+      "id": 63,
+      "start": 477.42,
+      "end": 485.86,
+      "text": "more than just theaters. They were in fact the place that Europe got its news."
+    },
+    {
+      "id": 64,
+      "start": 485.86,
+      "end": 492.86,
+      "text": "It was back in 1909 when Pathé was already operating over 200 theaters in Europe, and"
+    },
+    {
+      "id": 65,
+      "start": 492.86,
+      "end": 498.34,
+      "text": "they felt they had a real chance to be more important than just a movie theater. They"
+    },
+    {
+      "id": 66,
+      "start": 498.34,
+      "end": 506.42,
+      "text": "actually began to cobble together images, film footage, and text to create 7 to 10 minutes"
+    },
+    {
+      "id": 67,
+      "start": 506.42,
+      "end": 512.76,
+      "text": "of news items that would be projected before a movie would start. They would be called"
+    },
+    {
+      "id": 68,
+      "start": 512.76,
+      "end": 517.42,
+      "text": "newsreels. Newsreels were important for two reasons."
+    },
+    {
+      "id": 69,
+      "start": 517.42,
+      "end": 526.22,
+      "text": "One, it might be the only place someone could see film footage of a world event. But two,"
+    },
+    {
+      "id": 70,
+      "start": 526.22,
+      "end": 533.22,
+      "text": "for theaters, who found it important to get people to come back to the theater every week,"
+    },
+    {
+      "id": 71,
+      "start": 533.22,
+      "end": 539.1,
+      "text": "found it difficult to keep people coming back when the movie didn't change. But once newsreels"
+    },
+    {
+      "id": 72,
+      "start": 539.1,
+      "end": 544.06,
+      "text": "were added, twice a week, there would be something new to see."
+    },
+    {
+      "id": 73,
+      "start": 544.06,
+      "end": 552.34,
+      "text": "In the United States, it wasn't until 1929, at the beginning of the Great Depression,"
+    },
+    {
+      "id": 74,
+      "start": 552.34,
+      "end": 558.22,
+      "text": "that Universal started doing the same thing, providing newsreels twice a week before the"
+    },
+    {
+      "id": 75,
+      "start": 558.22,
+      "end": 567.92,
+      "text": "movies in their theaters. And until 1952, with the advent of television, the newsreels"
+    },
+    {
+      "id": 76,
+      "start": 567.92,
+      "end": 576.46,
+      "text": "at the cinema were the only moving images people would ever see of major events."
+    },
+    {
+      "id": 77,
+      "start": 576.46,
+      "end": 582.98,
+      "text": "Consider Charles Lindbergh's 1927 flight, or the attack on Pearl Harbor, or the bullet"
+    },
+    {
+      "id": 78,
+      "start": 582.98,
+      "end": 589.58,
+      "text": "reel car of Bonnie and Clyde. The world certainly heard about the events on the radio and read"
+    },
+    {
+      "id": 79,
+      "start": 589.58,
+      "end": 597.82,
+      "text": "them in the paper. But the newsreel before the movie was film footage."
+    },
+    {
+      "id": 80,
+      "start": 597.82,
+      "end": 604.38,
+      "text": "In thinking through who were the most important storytellers of the 20th century, the newsreel"
+    },
+    {
+      "id": 81,
+      "start": 604.38,
+      "end": 615.3,
+      "text": "producers should probably top that list. That is, until the day they became irrelevant."
+    },
+    {
+      "id": 82,
+      "start": 615.3,
+      "end": 620.96,
+      "text": "For Russia, however, the story was a little different. Their state-run newsreel service"
+    },
+    {
+      "id": 83,
+      "start": 620.96,
+      "end": 626.82,
+      "text": "was called Kinokronika. They were the most important storytellers from the government's"
+    },
+    {
+      "id": 84,
+      "start": 626.82,
+      "end": 631.94,
+      "text": "point of view, as they were only allowed to produce government-approved stories about"
+    },
+    {
+      "id": 85,
+      "start": 631.94,
+      "end": 637.9,
+      "text": "things like agriculture, or new factory openings, or new speeches."
+    },
+    {
+      "id": 86,
+      "start": 637.9,
+      "end": 660.94,
+      "text": "Which brings us to the next hero of our story, straight from the heart of Central Russia."
+    },
+    {
+      "id": 87,
+      "start": 660.94,
+      "end": 668.66,
+      "text": "It was 1892 when Alexander M. Poniatoff was born in Russkaya Aysha, an area of Central"
+    },
+    {
+      "id": 88,
+      "start": 668.66,
+      "end": 673.5,
+      "text": "Russia. As a child, he loved trains and dreamed of"
+    },
+    {
+      "id": 89,
+      "start": 673.5,
+      "end": 681.5,
+      "text": "one day being an engineer. Early on, his father saw in him some engineering talent, and sent"
+    },
+    {
+      "id": 90,
+      "start": 681.5,
+      "end": 689.3,
+      "text": "him to a technical school in Germany to study. This was, of course, prior to World War I,"
+    },
+    {
+      "id": 91,
+      "start": 689.3,
+      "end": 695.7,
+      "text": "when Russia was part of the world economy. Unfortunately, Alexander was unaware of the"
+    },
+    {
+      "id": 92,
+      "start": 695.7,
+      "end": 702.1,
+      "text": "tension that existed between Germany and Russia, and so he was still in Germany when World"
+    },
+    {
+      "id": 93,
+      "start": 702.1,
+      "end": 709.82,
+      "text": "War I started. And being from the enemy's home country, he was forced to flee to Belgium"
+    },
+    {
+      "id": 94,
+      "start": 709.82,
+      "end": 717.14,
+      "text": "and didn't make it home until 1916. There he enlisted in the army, trying to become"
+    },
+    {
+      "id": 95,
+      "start": 717.14,
+      "end": 724.86,
+      "text": "a pilot, but the end of the war was near and he ended up getting stuck at home."
+    },
+    {
+      "id": 96,
+      "start": 724.86,
+      "end": 731.14,
+      "text": "Immediately after the war, as noted, the Russian Revolution began, with Lenin overthrowing"
+    },
+    {
+      "id": 97,
+      "start": 731.14,
+      "end": 738.18,
+      "text": "the government. So to evade the chaos completely, Alexander fled to China and found work with"
+    },
+    {
+      "id": 98,
+      "start": 738.18,
+      "end": 749.14,
+      "text": "Sheng-Hao Power. And then, in 1927, a few years later, he made one more jump to the United States."
+    },
+    {
+      "id": 99,
+      "start": 749.14,
+      "end": 753.38,
+      "text": "After three years of solid work in New York, where he was able to acquire two patents for"
+    },
+    {
+      "id": 100,
+      "start": 753.38,
+      "end": 761.3,
+      "text": "his work, Alexander decided he wanted to see and live in San Francisco. Thus, his next"
+    },
+    {
+      "id": 101,
+      "start": 761.3,
+      "end": 768.98,
+      "text": "adventure would begin. In 1934, he was directed to a gentleman named T. Irving Moseley of"
+    },
+    {
+      "id": 102,
+      "start": 768.98,
+      "end": 776.74,
+      "text": "the Dalmo Victor Company. Dalmo specialized in radar systems for planes and submarines."
+    },
+    {
+      "id": 103,
+      "start": 776.74,
+      "end": 782.5,
+      "text": "Alexander was put in charge of developing and testing a thermal control system for them."
+    },
+    {
+      "id": 104,
+      "start": 782.5,
+      "end": 789.58,
+      "text": "But when World War II hit, they needed Alexander's skill focus on developing airborne radar scanners"
+    },
+    {
+      "id": 105,
+      "start": 789.58,
+      "end": 795.78,
+      "text": "for the US Navy. The contract they had with the government to create these radar scanners"
+    },
+    {
+      "id": 106,
+      "start": 795.78,
+      "end": 802.86,
+      "text": "was only for 100 days. At the end of that, they would need a working prototype. But they"
+    },
+    {
+      "id": 107,
+      "start": 802.86,
+      "end": 811.06,
+      "text": "made that agreement before they realized the motors and generators they needed didn't exist."
+    },
+    {
+      "id": 108,
+      "start": 811.06,
+      "end": 817.58,
+      "text": "But they knew Alexander could build them. So they convinced him to start his own company"
+    },
+    {
+      "id": 109,
+      "start": 817.58,
+      "end": 823.26,
+      "text": "to build these required motors and generators, because they could pay him much more if he"
+    },
+    {
+      "id": 110,
+      "start": 823.26,
+      "end": 831.14,
+      "text": "was a consultant than if he was an employee. So he took his initials, Alexander Matvovich"
+    },
+    {
+      "id": 111,
+      "start": 831.14,
+      "end": 854.38,
+      "text": "Poniatoff's initials, A.M.P., and added the word \"excellence\" to come up with his new company name, Ampex."
+    },
+    {
+      "id": 112,
+      "start": 854.38,
+      "end": 861.1,
+      "text": "The work was steady until the war ended, wherein Alexander needed a new project to work on."
+    },
+    {
+      "id": 113,
+      "start": 861.1,
+      "end": 869.02,
+      "text": "One thing that piqued his interest was the German-invented magnetophone. It was the first"
+    },
+    {
+      "id": 114,
+      "start": 869.02,
+      "end": 877.14,
+      "text": "reel-to-reel tape recorder. It was an amazing invention that allowed radio to finally broadcast"
+    },
+    {
+      "id": 115,
+      "start": 877.14,
+      "end": 884.74,
+      "text": "taped recordings. Prior to the invention of that, everything on radio was live. Nothing"
+    },
+    {
+      "id": 116,
+      "start": 884.74,
+      "end": 890.98,
+      "text": "could be saved and then rebroadcast. For another time, for another time zone, it all had to"
+    },
+    {
+      "id": 117,
+      "start": 890.98,
+      "end": 898.92,
+      "text": "be live. So Alexander and his team, including a young Ray Dolby, who would later create"
+    },
+    {
+      "id": 118,
+      "start": 898.92,
+      "end": 906.88,
+      "text": "Dolby Labs, set out to make an even better version of this magnetophone. And they decided"
+    },
+    {
+      "id": 119,
+      "start": 906.88,
+      "end": 915.14,
+      "text": "to see if they could make one for video as well. Their audio recorder caught the attention"
+    },
+    {
+      "id": 120,
+      "start": 915.14,
+      "end": 922.44,
+      "text": "of radio megastar Bing Crosby. He'd heard about it and wanted to see it in action. He"
+    },
+    {
+      "id": 121,
+      "start": 922.44,
+      "end": 931.54,
+      "text": "desperately needed this tape recorder. At the time, he wasn't even doing radio, because"
+    },
+    {
+      "id": 122,
+      "start": 931.54,
+      "end": 938.6,
+      "text": "he'd become frustrated with all of the regimented work that was required to pull off live recordings."
+    },
+    {
+      "id": 123,
+      "start": 938.6,
+      "end": 945.7,
+      "text": "And he'd already asked if he could play pre-recorded stuff on the radio. But the quality wasn't"
+    },
+    {
+      "id": 124,
+      "start": 945.7,
+      "end": 955.14,
+      "text": "there yet, and ABC said no. But this new Ampex tape recorder could change all of that. In"
+    },
+    {
+      "id": 125,
+      "start": 955.14,
+      "end": 965.46,
+      "text": "1947, after hearing the Ampex recording, ABC said yes to Bing Crosby. So Bing ordered $50,000"
+    },
+    {
+      "id": 126,
+      "start": 965.46,
+      "end": 974.18,
+      "text": "of equipment from Ampex to start recording his own music. That money helped Ampex fund"
+    },
+    {
+      "id": 127,
+      "start": 974.18,
+      "end": 982.62,
+      "text": "the work and research it needed to build a video recorder. And that hard work paid off."
+    },
+    {
+      "id": 128,
+      "start": 982.62,
+      "end": 991.42,
+      "text": "On April 14, 1956, at the National Association of TV and Radio Broadcasters, Ampex unveiled"
+    },
+    {
+      "id": 129,
+      "start": 991.42,
+      "end": 1002.3,
+      "text": "to the world their VR1000 video recorder system, camera, tape, and playback. It was so groundbreaking,"
+    },
+    {
+      "id": 130,
+      "start": 1002.3,
+      "end": 1013.74,
+      "text": "from that event alone, they got 45 orders, at $45,000 each, in 1956. It would be the"
+    },
+    {
+      "id": 131,
+      "start": 1013.74,
+      "end": 1021.62,
+      "text": "first time television could broadcast something that wasn't live. And that moment changed"
+    },
+    {
+      "id": 132,
+      "start": 1021.62,
+      "end": 1030.7,
+      "text": "the world forever. Unfortunately for the important newsreel producers and storytellers, Ampex's"
+    },
+    {
+      "id": 133,
+      "start": 1030.7,
+      "end": 1043.9,
+      "text": "new technology meant newsreels were no longer needed. Now television would broadcast moving film."
+    },
+    {
+      "id": 134,
+      "start": 1043.9,
+      "end": 1052.78,
+      "text": "But this happening in 1956 brings us to the next hero of our story, Mr. Donald Kendall."
+    },
+    {
+      "id": 135,
+      "start": 1052.78,
+      "end": 1061.26,
+      "text": "Because in 1956, Mr. Kendall became the Vice President of Marketing at Pepsi Cola. And"
+    },
+    {
+      "id": 136,
+      "start": 1061.26,
+      "end": 1069.62,
+      "text": "while that may seem immediately off base from our discussion about Russia, vodka, and newsreels,"
+    },
+    {
+      "id": 137,
+      "start": 1069.62,
+      "end": 1073.94,
+      "text": "these stories are about to all come together."
+    },
+    {
+      "id": 138,
+      "start": 1073.94,
+      "end": 1087.62,
+      "text": "In 1956, Pepsi wasn't a new drink. It originated back in 1893 in North Carolina, when Caleb"
+    },
+    {
+      "id": 139,
+      "start": 1087.62,
+      "end": 1094.66,
+      "text": "Bradham invented it, calling it Brad's drink. But one could say marketing had been at the"
+    },
+    {
+      "id": 140,
+      "start": 1094.66,
+      "end": 1101.44,
+      "text": "heart of Pepsi from the very beginning, because it wasn't long before Brad renamed his drink."
+    },
+    {
+      "id": 141,
+      "start": 1101.44,
+      "end": 1108.58,
+      "text": "He learned that his drink relieved dyspepsia, and thought more people would buy it if it"
+    },
+    {
+      "id": 142,
+      "start": 1108.58,
+      "end": 1115.5,
+      "text": "were called Pepsi Cola. Originally, it was only sold as a syrup for mixing at soda fountains,"
+    },
+    {
+      "id": 143,
+      "start": 1115.5,
+      "end": 1123.3,
+      "text": "but soon after was sold in bottles. As more proof of its early marketing prowess, in 1909,"
+    },
+    {
+      "id": 144,
+      "start": 1123.3,
+      "end": 1130.18,
+      "text": "Pepsi hired Barney Oldfield, one of automobile racing's pioneers, to help market the drink."
+    },
+    {
+      "id": 145,
+      "start": 1130.18,
+      "end": 1135.5,
+      "text": "But even the best of intentions couldn't prepare for the changes World War I would"
+    },
+    {
+      "id": 146,
+      "start": 1135.5,
+      "end": 1142.14,
+      "text": "create. The fluctuating price of sugar was too much for the young company, and Pepsi"
+    },
+    {
+      "id": 147,
+      "start": 1142.14,
+      "end": 1146.9,
+      "text": "went bankrupt in 1923."
+    },
+    {
+      "id": 148,
+      "start": 1146.9,
+      "end": 1154.78,
+      "text": "Charles Guth, a candy seller and multi-candy shop owner, decided to buy Pepsi because he"
+    },
+    {
+      "id": 149,
+      "start": 1154.78,
+      "end": 1160.98,
+      "text": "could sell it in his candy stores. With Coca Cola also marketing their drink, this new"
+    },
+    {
+      "id": 150,
+      "start": 1160.98,
+      "end": 1166.02,
+      "text": "Cola flavor was starting to reach everyone, and Guth thought he could double the sales"
+    },
+    {
+      "id": 151,
+      "start": 1166.02,
+      "end": 1169.34,
+      "text": "that Pepsi had ever received."
+    },
+    {
+      "id": 152,
+      "start": 1169.34,
+      "end": 1175.26,
+      "text": "Seeing Coke was having success pushing every Coke for only a nickel, Guth decided to join"
+    },
+    {
+      "id": 153,
+      "start": 1175.26,
+      "end": 1182.26,
+      "text": "him and sell every Pepsi bulk Cola bottle for a nickel, except Guth decided to sell"
+    },
+    {
+      "id": 154,
+      "start": 1182.26,
+      "end": 1188.5,
+      "text": "12-ounce bottles instead of Coke's 6-ounce bottles."
+    },
+    {
+      "id": 155,
+      "start": 1188.5,
+      "end": 1194.54,
+      "text": "And so to make this announcement to the world, on the radio he decided to create a jingle"
+    },
+    {
+      "id": 156,
+      "start": 1194.54,
+      "end": 1200.46,
+      "text": "that would illustrate this new difference. And incidentally, this jingle they created"
+    },
+    {
+      "id": 157,
+      "start": 1200.46,
+      "end": 1208.38,
+      "text": "to sell Pepsi became the world's first jingle that would also become a number one hit song."
+    },
+    {
+      "id": 158,
+      "start": 1208.38,
+      "end": 1215.14,
+      "text": "So much so he even got Duke Ellington and Lionel Hampton to play it at their live events."
+    },
+    {
+      "id": 159,
+      "start": 1238.38,
+      "end": 1246.66,
+      "text": "When World War II started, sugar was again Pepsi's biggest problem. The government"
+    },
+    {
+      "id": 160,
+      "start": 1246.66,
+      "end": 1253.7,
+      "text": "enacted a sugar rationing program, which meant Pepsi actually had to build a factory in Mexico"
+    },
+    {
+      "id": 161,
+      "start": 1253.7,
+      "end": 1258.3,
+      "text": "to get the sugar it needed to sell Pepsi nationwide."
+    },
+    {
+      "id": 162,
+      "start": 1258.3,
+      "end": 1265.5,
+      "text": "Coke, on the other hand, negotiated big government contracts to have Coca Cola sent to the troops,"
+    },
+    {
+      "id": 163,
+      "start": 1265.5,
+      "end": 1271.54,
+      "text": "and thus it became exempt from the sugar rationing program. And not only that, the government"
+    },
+    {
+      "id": 164,
+      "start": 1271.54,
+      "end": 1280.1,
+      "text": "helped Coca Cola set up bottling plants near military bases all over the world."
+    },
+    {
+      "id": 165,
+      "start": 1280.1,
+      "end": 1285.7,
+      "text": "Our hero of this story, Mr. Donald Kendall, was one of those US soldiers being provided"
+    },
+    {
+      "id": 166,
+      "start": 1285.7,
+      "end": 1289.22,
+      "text": "Coca Cola on the battlefield."
+    },
+    {
+      "id": 167,
+      "start": 1289.22,
+      "end": 1294.14,
+      "text": "Donald served the Navy as a pilot in the Pacific, earning three medals and the Distinguished"
+    },
+    {
+      "id": 168,
+      "start": 1294.14,
+      "end": 1299.9,
+      "text": "Flying Cross before returning home at the end of the war."
+    },
+    {
+      "id": 169,
+      "start": 1299.9,
+      "end": 1306.5,
+      "text": "Once home in New Rochelle, New York, Kendall joined Pepsi as a delivery driver and salesman,"
+    },
+    {
+      "id": 170,
+      "start": 1306.5,
+      "end": 1313.26,
+      "text": "working up the ranks to finally becoming VP of Marketing in 1956."
+    },
+    {
+      "id": 171,
+      "start": 1313.26,
+      "end": 1322.82,
+      "text": "Together, Alfred Steele, the president, and Donald Kendall helped Pepsi boom in the 1950s."
+    },
+    {
+      "id": 172,
+      "start": 1322.82,
+      "end": 1328.46,
+      "text": "They had amassed 700 bottling plants in 70 countries."
+    },
+    {
+      "id": 173,
+      "start": 1328.46,
+      "end": 1334.1,
+      "text": "But the country they really wanted to be in was the Soviet Union."
+    },
+    {
+      "id": 174,
+      "start": 1334.1,
+      "end": 1339.5,
+      "text": "Kendall knew the US government helped Coke expand its operations around the globe, and"
+    },
+    {
+      "id": 175,
+      "start": 1339.5,
+      "end": 1348.1,
+      "text": "also knew one of his biggest opportunities was to expand in places that Coke was not."
+    },
+    {
+      "id": 176,
+      "start": 1348.1,
+      "end": 1353.86,
+      "text": "The Soviet Union had built an actual iron curtain for trade and commerce, and American"
+    },
+    {
+      "id": 177,
+      "start": 1353.86,
+      "end": 1357.18,
+      "text": "companies were not there."
+    },
+    {
+      "id": 178,
+      "start": 1357.18,
+      "end": 1366.78,
+      "text": "But the first sign that might be changing was in 1953 at the death of Stalin."
+    },
+    {
+      "id": 179,
+      "start": 1366.78,
+      "end": 1372.54,
+      "text": "Nikita Khrushchev found his way to be the head of the Soviet Union, and the world found"
+    },
+    {
+      "id": 180,
+      "start": 1372.54,
+      "end": 1389.86,
+      "text": "out he wasn't a Stalin clone."
+    },
+    {
+      "id": 181,
+      "start": 1389.86,
+      "end": 1396.74,
+      "text": "With both Eisenhower newly elected and Khrushchev newly crowned, the peace and trade summits"
+    },
+    {
+      "id": 182,
+      "start": 1396.74,
+      "end": 1403.46,
+      "text": "the world had wanted and Winston Churchill had been requesting was back on the table."
+    },
+    {
+      "id": 183,
+      "start": 1403.46,
+      "end": 1409.78,
+      "text": "Therefore, the Soviet Union, Great Britain, France, and the United States would finally"
+    },
+    {
+      "id": 184,
+      "start": 1409.78,
+      "end": 1414.3,
+      "text": "meet in Geneva in 1955."
+    },
+    {
+      "id": 185,
+      "start": 1414.3,
+      "end": 1422.98,
+      "text": "The hope was that a path to peace, cooperation, and trade could finally be forged again."
+    },
+    {
+      "id": 186,
+      "start": 1422.98,
+      "end": 1429.72,
+      "text": "But by the end of that summit, little had been agreed upon."
+    },
+    {
+      "id": 187,
+      "start": 1429.72,
+      "end": 1435.3,
+      "text": "That led Eisenhower to suggest that perhaps the four countries could find some cultural"
+    },
+    {
+      "id": 188,
+      "start": 1435.3,
+      "end": 1440.7,
+      "text": "common ground, which they all agreed on and started immediately."
+    },
+    {
+      "id": 189,
+      "start": 1440.7,
+      "end": 1448.1,
+      "text": "In fact, the musical Porgy and Bess performed in Moscow and Leningrad, and Russia's Moiseyev"
+    },
+    {
+      "id": 190,
+      "start": 1448.1,
+      "end": 1451.9,
+      "text": "Dance Company toured the US."
+    },
+    {
+      "id": 191,
+      "start": 1451.9,
+      "end": 1456.66,
+      "text": "American doctors were allowed to come and vaccinate 12 million Russian children during"
+    },
+    {
+      "id": 192,
+      "start": 1456.66,
+      "end": 1462.3,
+      "text": "the polio epidemic there, and painters like Jackson Pollock and Edward Hopper were featured"
+    },
+    {
+      "id": 193,
+      "start": 1462.3,
+      "end": 1464.54,
+      "text": "in museums."
+    },
+    {
+      "id": 194,
+      "start": 1464.54,
+      "end": 1469.86,
+      "text": "The final cultural exchange agreement between the countries, however, didn't get signed"
+    },
+    {
+      "id": 195,
+      "start": 1469.86,
+      "end": 1480.66,
+      "text": "until 1958, and it included exhibitions that each would organize in the other's country."
+    },
+    {
+      "id": 196,
+      "start": 1480.66,
+      "end": 1486.94,
+      "text": "The US and Russia exhibitions would be in 1959."
+    },
+    {
+      "id": 197,
+      "start": 1486.94,
+      "end": 1492.48,
+      "text": "Khrushchev felt that hosting the Moscow exhibition would show the world what a true superpower"
+    },
+    {
+      "id": 198,
+      "start": 1492.48,
+      "end": 1494.18,
+      "text": "they were."
+    },
+    {
+      "id": 199,
+      "start": 1494.18,
+      "end": 1500.78,
+      "text": "And Eisenhower thought if they could be there for the exhibition, it would show Russians"
+    },
+    {
+      "id": 200,
+      "start": 1500.78,
+      "end": 1506.1,
+      "text": "that capitalism and America was ultimately good."
+    },
+    {
+      "id": 201,
+      "start": 1506.1,
+      "end": 1511.6,
+      "text": "One of the themes the US felt it had to overcome with Russians was the idea that capitalism"
+    },
+    {
+      "id": 202,
+      "start": 1511.6,
+      "end": 1514.22,
+      "text": "led to greed and selfishness."
+    },
+    {
+      "id": 203,
+      "start": 1514.22,
+      "end": 1521.86,
+      "text": "Khrushchev, back in 1956, had shared his thought that while capitalism is nice, it would die"
+    },
+    {
+      "id": 204,
+      "start": 1521.86,
+      "end": 1526.36,
+      "text": "out long before his country's strong economic position."
+    },
+    {
+      "id": 205,
+      "start": 1526.36,
+      "end": 1535.54,
+      "text": "He said that they would be around long after capitalism and would be here to bury capitalism."
+    },
+    {
+      "id": 206,
+      "start": 1535.54,
+      "end": 1541.26,
+      "text": "And his comment, which was translated, \"We will bury you,\" got a lot of press, most"
+    },
+    {
+      "id": 207,
+      "start": 1541.26,
+      "end": 1545.1,
+      "text": "of it out of context."
+    },
+    {
+      "id": 208,
+      "start": 1545.1,
+      "end": 1552.5,
+      "text": "At home, Eisenhower and the Department of Commerce sent out invitations to 450 American"
+    },
+    {
+      "id": 209,
+      "start": 1552.5,
+      "end": 1558.46,
+      "text": "companies, inviting them to partake in the exhibition and help sponsor the event."
+    },
+    {
+      "id": 210,
+      "start": 1558.46,
+      "end": 1563.74,
+      "text": "But the Soviet Union was a closed economy, they didn't allow foreign products, and their"
+    },
+    {
+      "id": 211,
+      "start": 1563.74,
+      "end": 1568.74,
+      "text": "currency the ruble, which was not tied to the gold standard, did not have any value"
+    },
+    {
+      "id": 212,
+      "start": 1568.74,
+      "end": 1571.68,
+      "text": "outside of the USSR."
+    },
+    {
+      "id": 213,
+      "start": 1571.68,
+      "end": 1577.94,
+      "text": "So many of the 450 companies thought it would be a waste of time and money to participate"
+    },
+    {
+      "id": 214,
+      "start": 1577.94,
+      "end": 1580.32,
+      "text": "in such an exhibition."
+    },
+    {
+      "id": 215,
+      "start": 1580.32,
+      "end": 1587.86,
+      "text": "One of those was Coke, which Donald Kendall thought was a gift, and his first chance at"
+    },
+    {
+      "id": 216,
+      "start": 1587.86,
+      "end": 1592.46,
+      "text": "growing Pepsi in the Soviet Union."
+    },
+    {
+      "id": 217,
+      "start": 1592.46,
+      "end": 1604.18,
+      "text": "Pepsi, GE, Kodak, IBM, RCA, Sears, and a host of others all were on board for the exhibition."
+    },
+    {
+      "id": 218,
+      "start": 1604.18,
+      "end": 1610.06,
+      "text": "But for Donald Kendall, the Pepsi board of directors wasn't a hundred percent in alignment"
+    },
+    {
+      "id": 219,
+      "start": 1610.06,
+      "end": 1611.56,
+      "text": "with his plan."
+    },
+    {
+      "id": 220,
+      "start": 1611.56,
+      "end": 1616.5,
+      "text": "They also thought it was probably not a good use of time and money."
+    },
+    {
+      "id": 221,
+      "start": 1616.5,
+      "end": 1619.76,
+      "text": "But it was Kendall pushing hard."
+    },
+    {
+      "id": 222,
+      "start": 1619.76,
+      "end": 1627.02,
+      "text": "He got the approval that he needed, but only because he promised he would personally finance"
+    },
+    {
+      "id": 223,
+      "start": 1627.02,
+      "end": 1631.82,
+      "text": "the entire venture with his own money."
+    },
+    {
+      "id": 224,
+      "start": 1631.82,
+      "end": 1636.74,
+      "text": "Once approved, he knew something big needed to happen, or he might come back without a"
+    },
+    {
+      "id": 225,
+      "start": 1636.74,
+      "end": 1646.1,
+      "text": "job."
+    },
+    {
+      "id": 226,
+      "start": 1646.1,
+      "end": 1653.14,
+      "text": "So the night before the Expo, at a VIP dinner, Donald Kendall approached Vice President"
+    },
+    {
+      "id": 227,
+      "start": 1653.14,
+      "end": 1654.14,
+      "text": "Richard Nixon."
+    },
+    {
+      "id": 228,
+      "start": 1654.14,
+      "end": 1659.8,
+      "text": "He had already met Nixon at some Republican fundraiser dinners, and both of them recognized"
+    },
+    {
+      "id": 229,
+      "start": 1659.8,
+      "end": 1661.68,
+      "text": "each other."
+    },
+    {
+      "id": 230,
+      "start": 1661.68,
+      "end": 1668.26,
+      "text": "He expressed to Nixon his hope that Nixon help him push Khrushchev to the Pepsi booth"
+    },
+    {
+      "id": 231,
+      "start": 1668.26,
+      "end": 1671.26,
+      "text": "to at least try a free sample."
+    },
+    {
+      "id": 232,
+      "start": 1671.26,
+      "end": 1676.58,
+      "text": "He would need at least that to satisfy his company."
+    },
+    {
+      "id": 233,
+      "start": 1676.58,
+      "end": 1683.2,
+      "text": "A picture of Khrushchev drinking Pepsi would be invaluable."
+    },
+    {
+      "id": 234,
+      "start": 1683.2,
+      "end": 1690.06,
+      "text": "As part of the Expo deal, Pepsi had agreed to send syrup to a local bottling company"
+    },
+    {
+      "id": 235,
+      "start": 1690.06,
+      "end": 1693.28,
+      "text": "to have enough samples for the whole show."
+    },
+    {
+      "id": 236,
+      "start": 1693.28,
+      "end": 1699.6,
+      "text": "Over three million people were expected to come through the American Exposition."
+    },
+    {
+      "id": 237,
+      "start": 1699.6,
+      "end": 1701.54,
+      "text": "But Kendall had another plan."
+    },
+    {
+      "id": 238,
+      "start": 1701.54,
+      "end": 1705.26,
+      "text": "He also brought a Pepsi from home."
+    },
+    {
+      "id": 239,
+      "start": 1705.26,
+      "end": 1712.58,
+      "text": "And just as requested, while walking together around the Expo Pavilion, Nixon guided Khrushchev"
+    },
+    {
+      "id": 240,
+      "start": 1712.58,
+      "end": 1714.82,
+      "text": "to the Pepsi booth."
+    },
+    {
+      "id": 241,
+      "start": 1714.82,
+      "end": 1716.98,
+      "text": "And Kendall was ready."
+    },
+    {
+      "id": 242,
+      "start": 1716.98,
+      "end": 1721.62,
+      "text": "He was ready to appeal to Khrushchev's Russian pride."
+    },
+    {
+      "id": 243,
+      "start": 1721.62,
+      "end": 1724.26,
+      "text": "He offered Khrushchev a taste test."
+    },
+    {
+      "id": 244,
+      "start": 1724.26,
+      "end": 1730.38,
+      "text": "In the left hand, Pepsi that was bottled in the United States, and the right hand Pepsi"
+    },
+    {
+      "id": 245,
+      "start": 1730.38,
+      "end": 1733.7,
+      "text": "that was bottled in Moscow."
+    },
+    {
+      "id": 246,
+      "start": 1733.7,
+      "end": 1739.66,
+      "text": "Khrushchev tried both, and he declared that not only was the drink refreshing, but the"
+    },
+    {
+      "id": 247,
+      "start": 1739.66,
+      "end": 1745.74,
+      "text": "better tasting Pepsi was the one bottled in Moscow."
+    },
+    {
+      "id": 248,
+      "start": 1745.74,
+      "end": 1753.58,
+      "text": "Pepsi had hit a home run."
+    },
+    {
+      "id": 249,
+      "start": 1753.58,
+      "end": 1759.58,
+      "text": "But that was not exactly the most memorable moment of that day."
+    },
+    {
+      "id": 250,
+      "start": 1759.58,
+      "end": 1765.7,
+      "text": "Nixon and Khrushchev had mostly exchanged pleasantries as they walked around the pavilion."
+    },
+    {
+      "id": 251,
+      "start": 1765.7,
+      "end": 1770.26,
+      "text": "But as they approached the display, showing all the kinds of things that were in American"
+    },
+    {
+      "id": 252,
+      "start": 1770.26,
+      "end": 1778.98,
+      "text": "kitchens, their discussion turned into a heated debate about capitalism versus communism."
+    },
+    {
+      "id": 253,
+      "start": 1778.98,
+      "end": 1785.14,
+      "text": "And while both felt that they came away looking like they'd won the debate, the world didn't"
+    },
+    {
+      "id": 254,
+      "start": 1785.14,
+      "end": 1787.02,
+      "text": "choose a winner."
+    },
+    {
+      "id": 255,
+      "start": 1787.02,
+      "end": 1797.34,
+      "text": "They were utterly fascinated by this raw, kitchen debate of two major superpower leaders."
+    },
+    {
+      "id": 256,
+      "start": 1797.34,
+      "end": 1803.62,
+      "text": "But in the end, it was Khrushchev who could have declared an all-out win in domination."
+    },
+    {
+      "id": 257,
+      "start": 1803.62,
+      "end": 1813.96,
+      "text": "But unfortunately, he was unaware of a point he could have made unbelievably well."
+    },
+    {
+      "id": 258,
+      "start": 1813.96,
+      "end": 1819.58,
+      "text": "Fortunately for the world, the kitchen debate had been caught on videotape, something a few"
+    },
+    {
+      "id": 259,
+      "start": 1819.58,
+      "end": 1822.82,
+      "text": "years prior could never have happened."
+    },
+    {
+      "id": 260,
+      "start": 1822.82,
+      "end": 1829.94,
+      "text": "And it was Nixon who proudly pointed to the film crew from San Francisco's Ampex in touting"
+    },
+    {
+      "id": 261,
+      "start": 1829.94,
+      "end": 1832.94,
+      "text": "the power of this amazing technology."
+    },
+    {
+      "id": 262,
+      "start": 1832.94,
+      "end": 1837.22,
+      "text": "He promised to Khrushchev the recording would make it around the world and they would not"
+    },
+    {
+      "id": 263,
+      "start": 1837.22,
+      "end": 1841.3,
+      "text": "cut out any of his words."
+    },
+    {
+      "id": 264,
+      "start": 1841.3,
+      "end": 1849.66,
+      "text": "What Khrushchev never knew was that the videotape recorder technology Nixon was so proud of,"
+    },
+    {
+      "id": 265,
+      "start": 1849.66,
+      "end": 1859.1,
+      "text": "this Ampex out of San Francisco, was the result of Mr. Alexander M. Poniatoff."
+    },
+    {
+      "id": 266,
+      "start": 1859.1,
+      "end": 1866.42,
+      "text": "This brilliant mind that had ended the newsreel industry and changed the world was in fact"
+    },
+    {
+      "id": 267,
+      "start": 1866.42,
+      "end": 1871.46,
+      "text": "a Russian invention, not an American one."
+    },
+    {
+      "id": 268,
+      "start": 1871.46,
+      "end": 1890.26,
+      "text": "That probably would have left Nixon speechless."
+    },
+    {
+      "id": 269,
+      "start": 1890.26,
+      "end": 1896.06,
+      "text": "For Kendall and Pepsi, the door to the Soviet Union was now opened a crack, but it would"
+    },
+    {
+      "id": 270,
+      "start": 1896.06,
+      "end": 1901.66,
+      "text": "take political finesse to close this deal."
+    },
+    {
+      "id": 271,
+      "start": 1901.66,
+      "end": 1908.78,
+      "text": "Nixon ran for president in 1960 with contributions from Pepsi but ultimately lost."
+    },
+    {
+      "id": 272,
+      "start": 1908.78,
+      "end": 1914.7,
+      "text": "And afterward, thinking Nixon still had a political future, Kendall moved Pepsi's legal"
+    },
+    {
+      "id": 273,
+      "start": 1914.7,
+      "end": 1918.78,
+      "text": "needs to Nixon's law firm."
+    },
+    {
+      "id": 274,
+      "start": 1918.78,
+      "end": 1923.62,
+      "text": "The need to maintain that relationship was right on Donald Kendall's part as Nixon"
+    },
+    {
+      "id": 275,
+      "start": 1923.62,
+      "end": 1934.1,
+      "text": "became president in 1968 and some of his first goals were peace and trade talks with Russia."
+    },
+    {
+      "id": 276,
+      "start": 1934.1,
+      "end": 1941.14,
+      "text": "Nixon asked Henry Kissinger if his team would lobby the Soviet ambassador to allow a trade"
+    },
+    {
+      "id": 277,
+      "start": 1941.14,
+      "end": 1948.58,
+      "text": "delegation to visit with Pepsi's Donald Kendall as the lead."
+    },
+    {
+      "id": 278,
+      "start": 1948.58,
+      "end": 1952.5,
+      "text": "And the Soviet ambassador agreed."
+    },
+    {
+      "id": 279,
+      "start": 1952.5,
+      "end": 1959.54,
+      "text": "To break ice at that meeting in Moscow, Kendall brought a transistor radio shaped like a Pepsi"
+    },
+    {
+      "id": 280,
+      "start": 1959.54,
+      "end": 1962.16,
+      "text": "can as a gift."
+    },
+    {
+      "id": 281,
+      "start": 1962.16,
+      "end": 1966.82,
+      "text": "The smile it created was the opening he needed."
+    },
+    {
+      "id": 282,
+      "start": 1966.82,
+      "end": 1972.78,
+      "text": "He got the green light to bring Pepsi into Russia."
+    },
+    {
+      "id": 283,
+      "start": 1972.78,
+      "end": 1977.9,
+      "text": "Except there was one small problem."
+    },
+    {
+      "id": 284,
+      "start": 1977.9,
+      "end": 1987.5,
+      "text": "Russia was still using the ruble and didn't have any way to pay for it."
+    },
+    {
+      "id": 285,
+      "start": 1987.5,
+      "end": 1991.86,
+      "text": "So they worked on a barter deal."
+    },
+    {
+      "id": 286,
+      "start": 1991.86,
+      "end": 1999.22,
+      "text": "Russia could give Pepsi tomato paste, which they could use in all of their Pizza Hut shops"
+    },
+    {
+      "id": 287,
+      "start": 1999.22,
+      "end": 2001.26,
+      "text": "in Europe."
+    },
+    {
+      "id": 288,
+      "start": 2001.26,
+      "end": 2004.66,
+      "text": "But that wasn't quite enough."
+    },
+    {
+      "id": 289,
+      "start": 2004.66,
+      "end": 2007.88,
+      "text": "Russia did have one other thing."
+    },
+    {
+      "id": 290,
+      "start": 2007.88,
+      "end": 2011.7,
+      "text": "They had surplus vodka."
+    },
+    {
+      "id": 291,
+      "start": 2011.7,
+      "end": 2022.06,
+      "text": "The vodka that was made for the Kremlin, the vodka of the capital, Stolichnaya."
+    },
+    {
+      "id": 292,
+      "start": 2022.06,
+      "end": 2030.82,
+      "text": "Pepsi would get surplus vodka and the exclusive right to market Stolichnaya vodka in the United"
+    },
+    {
+      "id": 293,
+      "start": 2030.82,
+      "end": 2033.1,
+      "text": "States."
+    },
+    {
+      "id": 294,
+      "start": 2033.1,
+      "end": 2039.78,
+      "text": "And with the inking of that agreement, Pepsi became the first US consumer good sold in"
+    },
+    {
+      "id": 295,
+      "start": 2039.78,
+      "end": 2041.98,
+      "text": "the Soviet Union."
+    },
+    {
+      "id": 296,
+      "start": 2041.98,
+      "end": 2047.82,
+      "text": "And Stolichnaya vodka got an American audience."
+    },
+    {
+      "id": 297,
+      "start": 2047.82,
+      "end": 2054.24,
+      "text": "By 1989, Russians were drinking billions of servings of Pepsi each year."
+    },
+    {
+      "id": 298,
+      "start": 2054.24,
+      "end": 2058.36,
+      "text": "And Stolichnaya, not as much."
+    },
+    {
+      "id": 299,
+      "start": 2058.36,
+      "end": 2061.9,
+      "text": "So Pepsi had to renegotiate."
+    },
+    {
+      "id": 300,
+      "start": 2061.9,
+      "end": 2071.42,
+      "text": "This time the Soviet Union offered Pepsi its outdated military sea craft, 17 submarines,"
+    },
+    {
+      "id": 301,
+      "start": 2071.42,
+      "end": 2075.88,
+      "text": "a cruiser, a frigate, and a destroyer."
+    },
+    {
+      "id": 302,
+      "start": 2075.88,
+      "end": 2081.58,
+      "text": "And suddenly Pepsi had the sixth largest navy in the world."
+    },
+    {
+      "id": 303,
+      "start": 2081.58,
+      "end": 2089.74,
+      "text": "They even exclaimed to US Navy Admiral Brent Scowcroft that Pepsi was disarming Russia faster"
+    },
+    {
+      "id": 304,
+      "start": 2089.74,
+      "end": 2092.72,
+      "text": "than the US military."
+    },
+    {
+      "id": 305,
+      "start": 2092.72,
+      "end": 2100.34,
+      "text": "Of course Pepsi found a buyer of scrap metal in Norway to take the military equipment."
+    },
+    {
+      "id": 306,
+      "start": 2100.34,
+      "end": 2109.1,
+      "text": "One year later, Russia offered oil tankers and freighters in a $3 billion deal with Pepsi."
+    },
+    {
+      "id": 307,
+      "start": 2109.1,
+      "end": 2115.54,
+      "text": "But that deal didn't last very long because in 1991, the Soviet Union collapsed and the"
+    },
+    {
+      "id": 308,
+      "start": 2115.54,
+      "end": 2120.62,
+      "text": "country separated into a bunch of independent republics."
+    },
+    {
+      "id": 309,
+      "start": 2120.62,
+      "end": 2124.26,
+      "text": "The Pepsi bottling it planted up ended up in Belarus."
+    },
+    {
+      "id": 310,
+      "start": 2124.26,
+      "end": 2132.46,
+      "text": "The Stolichnaya plant ended up in Latvia and the oil tanker manufacturer ended up in Ukraine."
+    },
+    {
+      "id": 311,
+      "start": 2132.46,
+      "end": 2140.58,
+      "text": "Khrushchev was right, perhaps, in saying the USSR would bury the world in problems."
+    },
+    {
+      "id": 312,
+      "start": 2140.58,
+      "end": 2145.8,
+      "text": "But the Soviet breakup meant the world's companies would now all be invited to sell"
+    },
+    {
+      "id": 313,
+      "start": 2145.8,
+      "end": 2152.88,
+      "text": "their products back in Russia, like the days of Singer sewing machine."
+    },
+    {
+      "id": 314,
+      "start": 2152.88,
+      "end": 2158.46,
+      "text": "But this story comes full circle from the days of Lenin and Stalin."
+    },
+    {
+      "id": 315,
+      "start": 2158.46,
+      "end": 2165.96,
+      "text": "That's because in 1999 Putin came to power with dreams of reviving the Soviet Union to"
+    },
+    {
+      "id": 316,
+      "start": 2165.96,
+      "end": 2168.48,
+      "text": "its former glory."
+    },
+    {
+      "id": 317,
+      "start": 2168.48,
+      "end": 2178.14,
+      "text": "It started in 2014 by taking the Crimean Peninsula back from Ukraine and then in 2022 by attempting"
+    },
+    {
+      "id": 318,
+      "start": 2178.14,
+      "end": 2183.98,
+      "text": "to take back Ukraine, the biggest of the independent republics."
+    },
+    {
+      "id": 319,
+      "start": 2183.98,
+      "end": 2189.9,
+      "text": "But instead of closing Russia off from the world from the inside this time, the world"
+    },
+    {
+      "id": 320,
+      "start": 2189.9,
+      "end": 2193.5,
+      "text": "closed Russia off from the outside."
+    },
+    {
+      "id": 321,
+      "start": 2193.5,
+      "end": 2200.18,
+      "text": "Things like McDonald's, Coke, and even Pepsi ceased producing there."
+    },
+    {
+      "id": 322,
+      "start": 2200.18,
+      "end": 2207.42,
+      "text": "And in fact the makers of Stolichnaya in Latvia revolted in their own way by getting rid of"
+    },
+    {
+      "id": 323,
+      "start": 2207.42,
+      "end": 2216.38,
+      "text": "the Russian name Stolichnaya and changing it to Stoli, to distance themselves from Russia."
+    },
+    {
+      "id": 324,
+      "start": 2216.38,
+      "end": 2221.42,
+      "text": "And the calls for a Geneva-like peace meeting have begun again."
+    },
+    {
+      "id": 325,
+      "start": 2221.42,
+      "end": 2228.38,
+      "text": "But because of the destruction caused by the Ukraine war, this time Russia won't have"
+    },
+    {
+      "id": 326,
+      "start": 2228.38,
+      "end": 2234.62,
+      "text": "any old military equipment to trade to get Pepsi back."
+    },
+    {
+      "id": 327,
+      "start": 2234.62,
+      "end": 2240.58,
+      "text": "Before we end our tale, let's hear some of the stories they hit the cutting room for."
+    },
+    {
+      "id": 328,
+      "start": 2240.58,
+      "end": 2246.7,
+      "text": "To start, Pepsi has been on my episode idea list since day one."
+    },
+    {
+      "id": 329,
+      "start": 2246.7,
+      "end": 2254.1,
+      "text": "I have collected Pepsi cans since 1989 and have collected over 600 cans over the past"
+    },
+    {
+      "id": 330,
+      "start": 2254.1,
+      "end": 2262.34,
+      "text": "40 years and recently turned my collection and my Pepsi can collecting knowledge into"
+    },
+    {
+      "id": 331,
+      "start": 2262.34,
+      "end": 2264.26,
+      "text": "a book."
+    },
+    {
+      "id": 332,
+      "start": 2264.26,
+      "end": 2271.68,
+      "text": "Look for the Pepsi can collector's almanac anywhere you buy books."
+    },
+    {
+      "id": 333,
+      "start": 2271.68,
+      "end": 2276.78,
+      "text": "The barter system that Pepsi and Russia went through has existed from the beginning of"
+    },
+    {
+      "id": 334,
+      "start": 2276.78,
+      "end": 2282.78,
+      "text": "time and it is still used today, though most often it's used to get around tariffs and"
+    },
+    {
+      "id": 335,
+      "start": 2282.78,
+      "end": 2284.62,
+      "text": "trade embargoes."
+    },
+    {
+      "id": 336,
+      "start": 2284.62,
+      "end": 2289.9,
+      "text": "Here are some of the more notable examples of crazy barters."
+    },
+    {
+      "id": 337,
+      "start": 2289.9,
+      "end": 2298.16,
+      "text": "In 1960, McDonnell Douglas made a deal with Yugoslavia to sell their DC-9 jet and part"
+    },
+    {
+      "id": 338,
+      "start": 2298.16,
+      "end": 2306.46,
+      "text": "of that deal was getting canned ham from Yugoslavia."
+    },
+    {
+      "id": 339,
+      "start": 2306.46,
+      "end": 2315.74,
+      "text": "In 1970, the Swedish music group ABBA got royalties from sales of music in Russia in"
+    },
+    {
+      "id": 340,
+      "start": 2315.74,
+      "end": 2319.98,
+      "text": "the form of oil commodity shares."
+    },
+    {
+      "id": 341,
+      "start": 2319.98,
+      "end": 2329.94,
+      "text": "In 1982, New Zealand exchanged lamb for oil with Iran and then in 1985 it traded lamb"
+    },
+    {
+      "id": 342,
+      "start": 2329.94,
+      "end": 2334.38,
+      "text": "to Poland for heavy equipment."
+    },
+    {
+      "id": 343,
+      "start": 2334.38,
+      "end": 2344.1,
+      "text": "In 1982, America sent dairy products to Jamaica in exchange for the mineral bauxite."
+    },
+    {
+      "id": 344,
+      "start": 2344.1,
+      "end": 2356.42,
+      "text": "In 1985, Nigeria sent oil to Brazil in exchange for sugar and Volkswagen bugs."
+    },
+    {
+      "id": 345,
+      "start": 2356.42,
+      "end": 2369.94,
+      "text": "And in 2005, Thailand got F-16 fighter jets from Lockheed, partially exchanged for chickens."
+    },
+    {
+      "id": 346,
+      "start": 2369.94,
+      "end": 2375.74,
+      "text": "When I was in fifth grade at Elmendorf Air Force Base in Alaska, I got to see Vice President"
+    },
+    {
+      "id": 347,
+      "start": 2375.74,
+      "end": 2381.26,
+      "text": "George Herbert Walker Bush and Admiral Brent Scowcroft speak."
+    },
+    {
+      "id": 348,
+      "start": 2381.26,
+      "end": 2386.5,
+      "text": "Fortunately, my dad let me leave school that day."
+    },
+    {
+      "id": 349,
+      "start": 2386.5,
+      "end": 2394.02,
+      "text": "In 1996, Pepsi got Russian astronauts to market Pepsi from the Mir space station."
+    },
+    {
+      "id": 350,
+      "start": 2394.02,
+      "end": 2404.38,
+      "text": "In 1954, Elvis recorded his first song \"That's Alright Mama\" on an Ampex tape recorder."
+    },
+    {
+      "id": 351,
+      "start": 2404.38,
+      "end": 2411.94,
+      "text": "And then in 1955, Ampex got an Oscar for its technical work on the movie musical Oklahoma."
+    },
+    {
+      "id": 352,
+      "start": 2411.94,
+      "end": 2420.98,
+      "text": "And then in 1957, Ampex won an Emmy for inventing the videotape recorder."
+    },
+    {
+      "id": 353,
+      "start": 2420.98,
+      "end": 2427.82,
+      "text": "In 1985, Sting recorded the hit song \"The Russians\" which included Khrushchev's famous"
+    },
+    {
+      "id": 354,
+      "start": 2427.82,
+      "end": 2431.9,
+      "text": "quote, \"We will bury you.\""
+    },
+    {
+      "id": 355,
+      "start": 2431.9,
+      "end": 2439.06,
+      "text": "Finally, in 1996, Pepsi unveiled a summer program that allowed people to collect Pepsi"
+    },
+    {
+      "id": 356,
+      "start": 2439.06,
+      "end": 2444.78,
+      "text": "points on packaging and then exchange them for Pepsi merchandise."
+    },
+    {
+      "id": 357,
+      "start": 2444.78,
+      "end": 2451.9,
+      "text": "Well, in one of the TV commercials, a funny moment, a military Harrier jump jet was listed"
+    },
+    {
+      "id": 358,
+      "start": 2451.9,
+      "end": 2457.9,
+      "text": "as one of the prizes you could get if you collected 7 million points."
+    },
+    {
+      "id": 359,
+      "start": 2457.9,
+      "end": 2465.14,
+      "text": "Nobody really wondered where they got such an idea, but then again, it was only 7 years"
+    },
+    {
+      "id": 360,
+      "start": 2465.14,
+      "end": 2470.62,
+      "text": "after they had one of the biggest navies in the world."
+    },
+    {
+      "id": 361,
+      "start": 2470.62,
+      "end": 2475.58,
+      "text": "You've been listening to the 82nd episode of \"Tracing the Path\" with Dan R. Morris."
+    },
+    {
+      "id": 362,
+      "start": 2475.58,
+      "end": 2481.14,
+      "text": "Search for \"Tracing the Path\" any place you listen to podcasts and listen in to every"
+    },
+    {
+      "id": 363,
+      "start": 2481.14,
+      "end": 2483.58,
+      "text": "episode."
+    },
+    {
+      "id": 364,
+      "start": 2483.58,
+      "end": 2489.46,
+      "text": "And many thanks to all the senior center and assisted living communities that use \"Tracing"
+    },
+    {
+      "id": 365,
+      "start": 2489.46,
+      "end": 2500.7,
+      "text": "the Path\" as their weekly activity hour."
+    }
+  ]
+}

@@ -1,136 +1,17 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  AUDIO_URL,
+  DURATION,
+  connections,
+  nodes,
+  storyBeats,
+  type StoryConnection,
+} from "./episode-data";
 
-const AUDIO_URL =
-  "https://tracingthepath.podomatic.com/enclosure/2026-07-30T21_02_28-07_00.mp3?_=1785470552.17837128";
-const DURATION = 2502;
-
-type StoryBeat = {
-  time: number;
-  year: string;
-  title: string;
-  kicker: string;
-  description: string;
-  nodes: string[];
-};
-
-type MapNode = {
-  id: string;
-  label: string;
-  type: "idea" | "place" | "event" | "thing" | "person";
-  icon?: string;
-  image?: string;
-  x: number;
-  y: number;
-};
-
-const storyBeats: StoryBeat[] = [
-  {
-    time: 0,
-    year: "1950s",
-    kicker: "The opening question",
-    title: "Can a soft drink cross the Iron Curtain?",
-    description:
-      "The Cold War was fought with missiles and speeches—but also with supermarkets, television cameras, vodka, and a paper cup of Pepsi.",
-    nodes: ["cold-war"],
-  },
-  {
-    time: 190,
-    year: "1959",
-    kicker: "A stage is built",
-    title: "America sends a kitchen to Moscow",
-    description:
-      "The American National Exhibition turns everyday consumer goods into an argument about which system can create a better life.",
-    nodes: ["exhibition", "moscow", "cold-war"],
-  },
-  {
-    time: 435,
-    year: "1959",
-    kicker: "A private tour becomes history",
-    title: "Nixon and Khrushchev clash",
-    description:
-      "Inside a model American kitchen, two leaders turn washing machines, choice, and comfort into the famous Kitchen Debate.",
-    nodes: ["nixon", "khrushchev", "exhibition"],
-  },
-  {
-    time: 635,
-    year: "1959",
-    kicker: "The invisible connector",
-    title: "Videotape lets the debate travel",
-    description:
-      "Ampex recording technology captures the encounter, allowing a moment in Moscow to become a shared media event.",
-    nodes: ["ampex", "nixon", "khrushchev"],
-  },
-  {
-    time: 880,
-    year: "1959",
-    kicker: "A small gesture, a large opening",
-    title: "Khrushchev tastes Pepsi",
-    description:
-      "A paper cup turns an abstract contest between superpowers into a personal encounter with an ordinary American product.",
-    nodes: ["pepsi", "khrushchev", "exhibition"],
-  },
-  {
-    time: 1170,
-    year: "1972",
-    kicker: "Money cannot cross the border",
-    title: "Pepsi and vodka solve a trade puzzle",
-    description:
-      "Because Soviet currency cannot be freely exchanged, Pepsi is paid through barter—opening the American market to Stolichnaya vodka.",
-    nodes: ["pepsi", "vodka", "soviet-trade"],
-  },
-  {
-    time: 1560,
-    year: "1970s–80s",
-    kicker: "Commerce finds a route",
-    title: "A brand travels where politics struggles",
-    description:
-      "Bottling plants and consumer demand expand the relationship, making Pepsi a visible piece of everyday Soviet life.",
-    nodes: ["pepsi", "soviet-trade", "moscow"],
-  },
-  {
-    time: 1890,
-    year: "1989",
-    kicker: "The deal becomes unbelievable",
-    title: "Pepsi acquires a navy",
-    description:
-      "A new barter agreement includes submarines and warships, briefly making a soft-drink company the owner of a startling fleet.",
-    nodes: ["pepsi", "fleet", "soviet-trade"],
-  },
-  {
-    time: 2200,
-    year: "1991 → today",
-    kicker: "The path turns back",
-    title: "The opening closes again",
-    description:
-      "The Soviet Union dissolves, the commercial bridge changes shape, and a later Russian government reverses much of the openness that made it possible.",
-    nodes: ["fleet", "putin", "cold-war"],
-  },
-];
-
-const nodes: MapNode[] = [
-  { id: "cold-war", label: "Cold War", type: "idea", image: "cold-war.jpg", x: 50, y: 8 },
-  { id: "moscow", label: "Moscow", type: "place", image: "moscow-kremlin.jpg", x: 17, y: 24 },
-  { id: "exhibition", label: "U.S. Exhibition", type: "event", image: "kitchen-debate.jpg", x: 50, y: 25 },
-  { id: "ampex", label: "Ampex videotape", type: "thing", image: "ampex-videotape.jpg", x: 83, y: 24 },
-  { id: "nixon", label: "Richard Nixon", type: "person", image: "richard-nixon.jpg", x: 28, y: 46 },
-  { id: "khrushchev", label: "Nikita Khrushchev", type: "person", image: "nikita-khrushchev.jpg", x: 72, y: 46 },
-  { id: "pepsi", label: "A cup of Pepsi", type: "thing", image: "vintage-pepsi-cans.jpg", x: 50, y: 60 },
-  { id: "vodka", label: "Stolichnaya", type: "thing", image: "stolichnaya.jpg", x: 17, y: 73 },
-  { id: "soviet-trade", label: "Barter deal", type: "idea", image: "barter.jpg", x: 83, y: 73 },
-  { id: "fleet", label: "The Pepsi fleet", type: "thing", image: "pepsi-fleet.jpg", x: 34, y: 90 },
-  { id: "putin", label: "Vladimir Putin", type: "person", image: "vladimir-putin.jpg", x: 70, y: 90 },
-];
-
-const connections = [
-  ["cold-war", "moscow"], ["cold-war", "exhibition"], ["cold-war", "ampex"],
-  ["moscow", "exhibition"], ["exhibition", "nixon"], ["exhibition", "khrushchev"],
-  ["ampex", "nixon"], ["ampex", "khrushchev"], ["nixon", "pepsi"],
-  ["khrushchev", "pepsi"], ["pepsi", "vodka"], ["pepsi", "soviet-trade"],
-  ["vodka", "soviet-trade"], ["soviet-trade", "fleet"], ["fleet", "putin"],
-  ["putin", "cold-war"],
-] as const;
+type TranscriptSegment = { id: number; start: number; end: number; text: string };
+type TranscriptDocument = { segments: TranscriptSegment[]; reviewStatus: string };
 
 function formatTime(seconds: number) {
   const mins = Math.floor(seconds / 60);
@@ -138,27 +19,87 @@ function formatTime(seconds: number) {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
+function HistoricalTimeline({ activeIndex }: { activeIndex: number }) {
+  const active = storyBeats[activeIndex];
+  const [start, end] = active.range;
+  const span = Math.max(1, end - start);
+  const markers = storyBeats
+    .map((beat, index) => ({ ...beat, index }))
+    .filter((beat) => beat.historicalYear >= start && beat.historicalYear <= end)
+    .filter((beat, index, list) => list.findIndex((item) => item.historicalYear === beat.historicalYear) === index);
+
+  return (
+    <section className="history-timeline" aria-label="Historical timeline">
+      <div className="history-timeline-head">
+        <span>HISTORY TIME</span>
+        <strong>{active.year}</strong>
+        <small>{active.scale} view · follows Dan’s historical jumps</small>
+      </div>
+      <div className="history-track">
+        <span className="track-end start">{start}</span>
+        <i className="track-line" />
+        {markers.map((marker) => {
+          const position = ((marker.historicalYear - start) / span) * 100;
+          return (
+            <span
+              className={`history-marker ${marker.index === activeIndex ? "current" : ""}`}
+              style={{ left: `${Math.min(96, Math.max(4, position))}%` }}
+              key={`${marker.historicalYear}-${marker.title}`}
+            >
+              <b>{marker.historicalYear}</b><i />
+            </span>
+          );
+        })}
+        <span className="track-end end">{end}</span>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const mapPanelRef = useRef<HTMLElement>(null);
+  const transcriptListRef = useRef<HTMLDivElement>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
+  const [showTranscript, setShowTranscript] = useState(false);
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
+  const [selectedConnection, setSelectedConnection] = useState<StoryConnection | null>(null);
+  const [playbackRate, setPlaybackRate] = useState(1);
+  const [transcript, setTranscript] = useState<TranscriptSegment[]>([]);
 
   const activeIndex = useMemo(() => {
     let index = 0;
-    storyBeats.forEach((beat, i) => {
-      if (currentTime >= beat.time) index = i;
-    });
+    storyBeats.forEach((beat, i) => { if (currentTime >= beat.time) index = i; });
     return index;
   }, [currentTime]);
-
   const activeBeat = storyBeats[activeIndex];
+
+  const activeTranscriptIndex = useMemo(() => {
+    if (!transcript.length) return -1;
+    let index = 0;
+    transcript.forEach((segment, i) => { if (currentTime >= segment.start) index = i; });
+    return index;
+  }, [currentTime, transcript]);
+  const activeTranscript = transcript[activeTranscriptIndex];
+
   const revealedNodes = useMemo(
-    () => new Set(storyBeats.slice(0, activeIndex + 1).flatMap((beat) => beat.nodes)),
-    [activeIndex],
+    () => new Set(nodes.filter((node) => currentTime >= node.firstSeen).map((node) => node.id)),
+    [currentTime],
   );
+  const revealedConnections = useMemo(
+    () => connections.filter((connection) => currentTime >= connection.revealAt),
+    [currentTime],
+  );
+  const latestConnection = revealedConnections.at(-1) ?? null;
+
+  useEffect(() => {
+    fetch("episode-82-transcript.json")
+      .then((response) => response.json())
+      .then((document: TranscriptDocument) => setTranscript(document.segments))
+      .catch(() => setTranscript([]));
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -176,27 +117,39 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!showTranscript || activeTranscriptIndex < 0 || !transcriptListRef.current) return;
+    const item = transcriptListRef.current.querySelector<HTMLElement>(`[data-transcript-id="${activeTranscriptIndex}"]`);
+    if (item) transcriptListRef.current.scrollTop = Math.max(0, item.offsetTop - transcriptListRef.current.clientHeight / 2);
+  }, [activeTranscriptIndex, showTranscript]);
+
   function togglePlay() {
     const audio = audioRef.current;
     if (!audio) return;
-    if (audio.paused) audio.play();
-    else audio.pause();
+    if (audio.paused) void audio.play(); else audio.pause();
   }
 
-  function seek(time: number) {
+  function seek(time: number, play = false) {
     const audio = audioRef.current;
     if (!audio) return;
-    audio.currentTime = time;
-    setCurrentTime(time);
+    const next = Math.max(0, Math.min(DURATION, time));
+    audio.currentTime = next;
+    setCurrentTime(next);
+    if (play) void audio.play();
+  }
+
+  function changeRate(rate: number) {
+    setPlaybackRate(rate);
+    if (audioRef.current) audioRef.current.playbackRate = rate;
   }
 
   function showBeatOnMap(index: number) {
     seek(storyBeats[index].time);
     setSelectedNode(null);
-    requestAnimationFrame(() => {
-      mapPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+    requestAnimationFrame(() => mapPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
+
+  const focusedConnection = selectedConnection ?? latestConnection;
 
   return (
     <main>
@@ -209,128 +162,126 @@ export default function Home() {
         <button className="about-button" onClick={() => setShowGuide(true)}>HOW TO EXPLORE <span>↗</span></button>
       </header>
 
-      <section className="experience" id="top">
+      <section className="episode-intro" id="top">
+        <img src="pepsi-episode-art.jpg" alt="Episode artwork for When Pepsi Cracked the Iron Curtain" />
+        <div>
+          <span>EPISODE 82 · A VISUAL LISTENING EDITION</span>
+          <h1>What could Pepsi, videotape, and vodka possibly have in common?</h1>
+          <p>Press play and watch Dan R. Morris’s answer assemble itself—one person, object, date, journey, and hidden connection at a time.</p>
+          <button onClick={() => { seek(0); togglePlay(); }}>{isPlaying ? "PAUSE THE STORY" : "PLAY & START DRAWING"} <b>{isPlaying ? "Ⅱ" : "▶"}</b></button>
+        </div>
+        <aside><img src="dan-r-morris.png" alt="Dan R. Morris" /><span>TOLD BY</span><strong>Dan R. Morris</strong><small>Award-winning storyteller and host of Tracing The Path</small></aside>
+      </section>
+
+      <section className="experience">
         <aside className="story-panel">
-          <div className="episode-identity">
-            <img src="pepsi-episode-art.jpg" alt="When Pepsi Cracked the Iron Curtain episode artwork" />
-            <div><span>EPISODE 82</span><strong>A story by<br />Dan R. Morris</strong></div>
-          </div>
+          <div className="episode-identity"><span>EPISODE {String(activeIndex + 1).padStart(2, "0")} / {storyBeats.length}</span><strong>{formatTime(activeBeat.time)}</strong></div>
           <div className="eyebrow"><span>NOW TRACING</span><b>{activeBeat.year}</b></div>
-          <h1>When Pepsi Cracked <em>the Iron Curtain</em></h1>
           <div className="beat-copy" key={activeBeat.title}>
             <span className="beat-kicker">{activeBeat.kicker}</span>
             <h2>{activeBeat.title}</h2>
             <p>{activeBeat.description}</p>
           </div>
-          <div className="listen-note"><span>✦</span><p><strong>Listen for the connection</strong>Watch how ordinary products become unlikely diplomats.</p></div>
+          {activeBeat.route && <div className="route-card"><span>WHERE THE PATH MOVES</span><div><b>{activeBeat.route[0]}</b><i>→</i><b>{activeBeat.route[1]}</b></div></div>}
+          <div className="takeaway"><span>✦</span><p><strong>WHAT TO NOTICE</strong>{activeBeat.takeaway}</p></div>
         </aside>
 
         <section ref={mapPanelRef} className="map-panel" aria-label="Animated story connection map">
-          <div className="map-heading"><span>THE STORY, DRAWN AS DAN TELLS IT</span><div className="drawing-status"><i />{isPlaying ? "DRAWING NOW" : "PRESS PLAY TO DRAW"}</div><small>{revealedNodes.size} of {nodes.length} connections revealed</small></div>
+          <HistoricalTimeline activeIndex={activeIndex} />
+          <div className="map-heading"><span>THE STORY, DRAWN AS DAN TELLS IT</span><div className="drawing-status"><i />{isPlaying ? "DRAWING NOW" : "PRESS PLAY TO DRAW"}</div><small>{revealedNodes.size}/{nodes.length} drawings · {revealedConnections.length}/{connections.length} links</small></div>
           <div className="map-canvas">
             <div className="paper-grid" />
-            {connections.map(([from, to], index) => {
-              const start = nodes.find((node) => node.id === from)!;
-              const end = nodes.find((node) => node.id === to)!;
+            {connections.map((connection, index) => {
+              const start = nodes.find((node) => node.id === connection.from)!;
+              const end = nodes.find((node) => node.id === connection.to)!;
               const dx = end.x - start.x;
               const dy = end.y - start.y;
               const length = Math.sqrt(dx * dx + dy * dy).toFixed(3);
               const angle = (Math.atan2(dy, dx) * (180 / Math.PI)).toFixed(3);
-              const revealed = revealedNodes.has(from) && revealedNodes.has(to);
-              const active = activeBeat.nodes.includes(from) && activeBeat.nodes.includes(to);
-              return <span key={index} className={`connection ${revealed ? "revealed" : ""} ${active ? "active" : ""}`} style={{ left: `${start.x}%`, top: `${start.y}%`, width: `${length}%`, transform: `rotate(${angle}deg)` }}><i /></span>;
+              const revealed = currentTime >= connection.revealAt;
+              const active = focusedConnection === connection;
+              return (
+                <button
+                  key={`${connection.from}-${connection.to}-${index}`}
+                  className={`connection ${revealed ? "revealed" : ""} ${active ? "active" : ""}`}
+                  style={{ left: `${start.x}%`, top: `${start.y}%`, width: `${length}%`, transform: `rotate(${angle}deg)` }}
+                  onClick={() => revealed && setSelectedConnection(connection)}
+                  aria-label={revealed ? `${start.label} ${connection.label} ${end.label}` : "Connection not yet revealed"}
+                ><i /></button>
+              );
             })}
             {nodes.map((node, nodeIndex) => {
               const revealed = revealedNodes.has(node.id);
               const active = activeBeat.nodes.includes(node.id);
               return (
                 <button
-                  key={`${node.id}-${revealed ? activeIndex : "hidden"}`}
-                  className={`map-node node-${node.id} ${node.type} ${revealed ? "revealed" : ""} ${active ? "active" : ""}`}
-                  style={{ left: `${node.x}%`, top: `${node.y}%`, "--draw-delay": `${(nodeIndex % 3) * 120}ms` } as React.CSSProperties}
+                  key={node.id}
+                  className={`map-node node-${node.id} ${node.kind} ${revealed ? "revealed" : ""} ${active ? "active" : ""}`}
+                  style={{ left: `${node.x}%`, top: `${node.y}%`, "--draw-delay": `${(nodeIndex % 4) * 90}ms` } as React.CSSProperties}
                   onClick={() => revealed && setSelectedNode(node.id === selectedNode ? null : node.id)}
-                  aria-label={node.label}
+                  aria-label={`${node.label}, ${node.historicalDate}`}
                 >
-                  <span className="sketch-frame">
-                    {node.image ? <img src={node.image} alt="" /> : <b className="object-sketch">{node.icon}</b>}
-                    <i className="hatch h1" /><i className="hatch h2" /><i className="hatch h3" />
-                    <span className="pencil-tip">✎</span>
-                  </span>
+                  <span className="sketch-frame"><img src={node.image} alt="" /><i className="hatch h1" /><i className="hatch h2" /><i className="hatch h3" /><span className="pencil-tip">✎</span></span>
                   <strong>{node.label}</strong>
+                  <small>{node.historicalDate}</small>
                 </button>
               );
             })}
-            {selectedNode && (
-              <div className="node-detail">
-                <button onClick={() => setSelectedNode(null)} aria-label="Close detail">×</button>
-                <strong>{nodes.find((node) => node.id === selectedNode)?.label}</strong>
-                <p>Appears in {storyBeats.filter((beat) => beat.nodes.includes(selectedNode)).length} chapter{storyBeats.filter((beat) => beat.nodes.includes(selectedNode)).length === 1 ? "" : "s"} of this path.</p>
-              </div>
-            )}
+            {selectedNode && (() => {
+              const node = nodes.find((item) => item.id === selectedNode)!;
+              return <div className="node-detail"><button onClick={() => setSelectedNode(null)} aria-label="Close detail">×</button><span>{node.historicalDate}</span><strong>{node.label}</strong><p>{node.description}</p><button className="detail-replay" onClick={() => seek(node.firstSeen, true)}>HEAR THE INTRODUCTION · {formatTime(node.firstSeen)} ▶</button></div>;
+            })()}
+            {focusedConnection && !selectedNode && <button className="connection-detail" onClick={() => seek(focusedConnection.revealAt, true)}><span>LATEST CONNECTION</span><strong>{focusedConnection.label}</strong><p>{focusedConnection.explanation}</p><b>REPLAY AT {formatTime(focusedConnection.revealAt)} ▶</b></button>}
           </div>
-          <div className="map-legend"><small>Click a revealed element to inspect it</small></div>
+          <div className="map-legend"><small>Drawings stay in place for spatial memory. Select any drawing or revealed line to hear its explanation.</small></div>
         </section>
       </section>
 
       <section className="player-shell" aria-label="Episode player">
-        <audio ref={audioRef} src={AUDIO_URL} preload="metadata" />
+        <audio ref={audioRef} src={AUDIO_URL} preload="metadata"><track kind="captions" src="episode-82-transcript.vtt" srcLang="en" label="English" /></audio>
+        <div className="live-caption"><span>DAN IS SAYING</span><p>{activeTranscript?.text ?? "Press play to begin the synchronized transcript."}</p><button onClick={() => setShowTranscript((value) => !value)}>{showTranscript ? "HIDE TRANSCRIPT" : "OPEN TRANSCRIPT"}</button></div>
         <div className="player-main">
+          <button className="skip-button" onClick={() => seek(currentTime - 15)} aria-label="Back 15 seconds">↶<small>15</small></button>
           <button className="play-button" onClick={togglePlay} aria-label={isPlaying ? "Pause episode" : "Play episode"}>{isPlaying ? "Ⅱ" : "▶"}</button>
-          <div className="player-title"><span>YOU’RE LISTENING TO</span><strong>When Pepsi Cracked the Iron Curtain</strong><small>Dan R. Morris · Tracing The Path</small></div>
+          <button className="skip-button" onClick={() => seek(currentTime + 15)} aria-label="Forward 15 seconds">↷<small>15</small></button>
           <div className="scrubber-wrap">
-            <div className="chapter-labels">{storyBeats.map((beat, i) => <button key={beat.time} className={i === activeIndex ? "active" : ""} onClick={() => seek(beat.time)}>{beat.year}</button>)}</div>
-            <input aria-label="Episode progress" type="range" min="0" max={DURATION} value={currentTime} onChange={(event) => seek(Number(event.target.value))} style={{ "--progress": `${(currentTime / DURATION) * 100}%` } as React.CSSProperties} />
-            <div className="time-row"><span>{formatTime(currentTime)}</span><span>{formatTime(DURATION)}</span></div>
+            <div className="audio-time-labels"><span>PODCAST TIME · {formatTime(currentTime)}</span><span>−{formatTime(DURATION - currentTime)}</span></div>
+            <input aria-label="Episode progress" type="range" min="0" max={DURATION} step="0.1" value={currentTime} onChange={(event) => seek(Number(event.target.value))} style={{ "--progress": `${(currentTime / DURATION) * 100}%` } as React.CSSProperties} />
+            <div className="chapter-labels">{storyBeats.map((beat, i) => <button key={beat.time} className={i === activeIndex ? "active" : ""} onClick={() => seek(beat.time)} aria-label={`Go to ${beat.title}`}><i /></button>)}</div>
           </div>
-          <button className="jump-button" onClick={() => seek(storyBeats[Math.min(activeIndex + 1, storyBeats.length - 1)].time)}>NEXT CONNECTION <span>→</span></button>
+          <label className="speed-control">SPEED<select value={playbackRate} onChange={(event) => changeRate(Number(event.target.value))}><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+          <button className="next-button" onClick={() => seek(storyBeats[Math.min(activeIndex + 1, storyBeats.length - 1)].time)}>NEXT CHAPTER <span>→</span></button>
         </div>
-        <div className="chapter-strip">
-          <span>CHAPTER {activeIndex + 1} OF {storyBeats.length}</span>
-          <div>{storyBeats.map((beat, i) => <button key={beat.time} className={i <= activeIndex ? "complete" : ""} onClick={() => seek(beat.time)} aria-label={`Go to ${beat.title}`}><i /></button>)}</div>
-          <strong>{activeBeat.title}</strong>
-        </div>
+        {showTranscript && <div className="transcript-drawer"><div className="transcript-head"><div><span>TIMESTAMPED TRANSCRIPT</span><strong>Follow Dan word for word</strong></div><p>Machine-transcribed and proper names reviewed. Click any line to jump the audio.</p><div className="transcript-downloads"><a href="episode-82-transcript.txt" download>DOWNLOAD TEXT ↓</a><a href="episode-82-transcript.json" download>JSON ↓</a></div></div><div className="transcript-list" ref={transcriptListRef}>{transcript.map((segment, index) => <button key={segment.id} data-transcript-id={index} className={index === activeTranscriptIndex ? "active" : ""} onClick={() => seek(segment.start, true)}><time>{formatTime(segment.start)}</time><span>{segment.text}</span></button>)}</div></div>}
       </section>
 
       <section className="journey">
-        <div className="journey-intro"><span>THE PATH SO FAR</span><h2>Pick up the story at any connection.</h2></div>
-        <p className="journey-lede">Choose a chapter to jump the audio and bring its people, objects, and connections into view on the drawing.</p>
+        <div className="journey-intro"><span>THE EPISODE, CHAPTER BY CHAPTER</span><h2>Jump anywhere without losing the drawing.</h2></div>
+        <p className="journey-lede">Each chapter now comes directly from the timestamped transcript. Choosing one returns you to the drawing, moves historical time, and cues the audio.</p>
         <div className="chapter-grid">
           {storyBeats.map((beat, i) => {
-            const beatNodes = beat.nodes
-              .map((nodeId) => nodes.find((node) => node.id === nodeId))
-              .filter((node): node is MapNode => Boolean(node));
-
-            return (
-              <button
-                key={beat.time}
-                onClick={() => showBeatOnMap(i)}
-                className={`chapter-card ${i === activeIndex ? "active" : ""}`}
-                aria-pressed={i === activeIndex}
-                aria-label={`Show ${beat.title} on the drawing`}
-              >
-                <span className="chapter-card-top"><b>{String(i + 1).padStart(2, "0")}</b><small>{beat.year}</small></span>
-                <span className="chapter-art" aria-hidden="true">
-                  {beatNodes.map((node) => <img key={node.id} src={node.image} alt="" />)}
-                </span>
-                <span className="chapter-kicker">{beat.kicker}</span>
-                <strong>{beat.title}</strong>
-                <p>{beat.description}</p>
-                <span className="chapter-action">{i === activeIndex ? "VIEWING ON MAP" : "SHOW ON MAP"}<b>↑</b></span>
-              </button>
-            );
+            const beatNodes = beat.nodes.map((nodeId) => nodes.find((node) => node.id === nodeId)).filter(Boolean);
+            return <button key={beat.time} onClick={() => showBeatOnMap(i)} className={`chapter-card ${i === activeIndex ? "active" : ""}`} aria-pressed={i === activeIndex}>
+              <span className="chapter-card-top"><b>{String(i + 1).padStart(2, "0")}</b><small>{formatTime(beat.time)} · {beat.year}</small></span>
+              <span className="chapter-art" aria-hidden="true">{beatNodes.slice(0, 4).map((node) => <img key={node!.id} src={node!.image} alt="" />)}</span>
+              <span className="chapter-kicker">{beat.kicker}</span><strong>{beat.title}</strong><p>{beat.description}</p>
+              <span className="chapter-action">{i === activeIndex ? "VIEWING ON DRAWING" : "JUMP TO DRAWING"}<b>↑</b></span>
+            </button>;
           })}
         </div>
       </section>
 
+      <section className="final-map"><span>WHEN THE LAST LINE IS DRAWN</span><h2>The episode becomes a map you can replay.</h2><p>People, products, political systems, inventions, and borders remain connected in one accumulated view. Return to any drawing or line to hear how Dan introduced it.</p><button onClick={() => { seek(DURATION - 3); mapPanelRef.current?.scrollIntoView({ behavior: "smooth" }); }}>REVEAL THE COMPLETED PATH ↑</button></section>
+
       <section className="host-feature">
         <div className="host-photo-wrap"><img src="dan-r-morris.png" alt="Dan R. Morris, host of Tracing The Path" /><span>YOUR STORYTELLER</span></div>
-        <div className="host-story"><span>THE VOICE BEHIND THE PATH</span><h2>Dan R. Morris</h2><h3>Award-winning storyteller. 20th-century historian. Tireless connector of dots.</h3><p>Dan begins with something familiar—a product, a person, a phrase—and follows the forgotten decisions that made it matter. This visual edition lets you watch those connections take shape while he tells the story.</p><a href="https://audienceindustries.com/about-tracing-the-path" target="_blank" rel="noreferrer">MEET DAN &amp; TRACING THE PATH ↗</a></div>
+        <div className="host-story"><span>THE VOICE BEHIND THE PATH</span><h2>Dan R. Morris</h2><h3>Award-winning storyteller. 20th-century historian. Tireless connector of dots.</h3><p>Dan begins with something familiar—a product, a person, a phrase—and follows the forgotten decisions that made it matter. This visual edition keeps his narration at the center while the history assembles around it.</p><a href="https://audienceindustries.com/about-tracing-the-path" target="_blank" rel="noreferrer">MEET DAN &amp; TRACING THE PATH ↗</a></div>
         <img className="host-cover" src="tracing-the-path-cover.jpg" alt="Tracing The Path podcast cover" />
       </section>
 
       <footer><span>TRACING THE PATH</span><p>Hosted by Dan R. Morris · Everyday things. Extraordinary connections.</p><a href="https://podcasts.apple.com/us/podcast/tracing-the-path-the-connected-20th-century/id1476334630" target="_blank" rel="noreferrer">VIEW ON APPLE PODCASTS ↗</a></footer>
 
-      {showGuide && <div className="modal-backdrop" onClick={() => setShowGuide(false)}><div className="guide-modal" onClick={(event) => event.stopPropagation()}><button onClick={() => setShowGuide(false)} aria-label="Close guide">×</button><span>HOW TO EXPLORE</span><h2>Listen. Watch. Follow the path.</h2><ol><li><b>01</b><p><strong>Press play</strong>The map reveals people, places, and objects with the story.</p></li><li><b>02</b><p><strong>Choose a chapter</strong>Jump to any connection from the timeline or path list.</p></li><li><b>03</b><p><strong>Inspect the map</strong>Select any revealed element to see where it returns.</p></li></ol><button className="start-button" onClick={() => { setShowGuide(false); togglePlay(); }}>START THE EPISODE →</button></div></div>}
+      {showGuide && <div className="modal-backdrop" role="button" tabIndex={0} aria-label="Close exploration guide" onKeyDown={(event) => { if (event.key === "Escape" || event.key === "Enter") setShowGuide(false); }} onClick={(event) => { if (event.target === event.currentTarget) setShowGuide(false); }}><div className="guide-modal" role="dialog" aria-modal="true" aria-labelledby="guide-title"><button onClick={() => setShowGuide(false)} aria-label="Close guide">×</button><span>HOW TO EXPLORE</span><h2 id="guide-title">Hear it. See it. Follow it.</h2><ol><li><b>01</b><p><strong>Press play</strong>Drawings appear only when Dan introduces them.</p></li><li><b>02</b><p><strong>Watch history time</strong>The upper timeline jumps backward and forward independently of the audio scrubber.</p></li><li><b>03</b><p><strong>Select the map</strong>Every drawing and connection can replay its own explanation.</p></li><li><b>04</b><p><strong>Open the transcript</strong>Follow, search visually, or jump from any timestamp.</p></li></ol><button className="start-button" onClick={() => { setShowGuide(false); seek(0, true); }}>START THE EPISODE →</button></div></div>}
     </main>
   );
 }

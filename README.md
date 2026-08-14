@@ -1,4 +1,19 @@
-# vinext-starter
+# Tracing The Path — Visual Podcast Experience
+
+This visual listening edition synchronizes Episode 82, “When Pepsi Cracked the Iron Curtain,” with a transcript-driven historical timeline, progressively drawn story graph, geography cues, and replayable people and connections. Tracing The Path branding and host Dan R. Morris remain central throughout the experience.
+
+## Transcript foundation
+
+The complete 41:42 podcast audio was transcribed locally with `whisper.cpp` (`small.en`). The published transcript contains 366 timestamped segments. Proper names central to the episode—such as Alexander M. Poniatoff, Donald Kendall, Stolichnaya, Barney Oldfield, and Charles Guth—received a manual correction pass.
+
+- `public/episode-82-transcript.txt` is the readable timestamped transcript.
+- `public/episode-82-transcript.json` powers the synchronized on-page transcript.
+- `app/episode-data.ts` stores the reviewed chapters, historical dates, entities, geography, and delayed relationship reveals separately from the rendering code.
+- `scripts/build-transcript.mjs` turns raw Whisper JSON into the two compact published transcript files.
+
+The transcript is machine-generated and should be treated as a carefully reviewed listening aid rather than a certified verbatim record.
+
+## Technical foundation
 
 A clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
