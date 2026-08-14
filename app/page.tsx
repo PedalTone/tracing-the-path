@@ -68,6 +68,7 @@ export default function Home() {
   const [selectedConnection, setSelectedConnection] = useState<StoryConnection | null>(null);
   const [playbackRate, setPlaybackRate] = useState(1);
   const [transcript, setTranscript] = useState<TranscriptSegment[]>([]);
+  const [isCompactMap, setIsCompactMap] = useState(false);
 
   const activeIndex = useMemo(() => {
     let index = 0;
@@ -93,12 +94,31 @@ export default function Home() {
     [currentTime],
   );
   const latestConnection = revealedConnections.at(-1) ?? null;
+  const positionedNodes = useMemo(
+    () => nodes.map((node, index) => isCompactMap ? {
+      ...node,
+      x: [17, 50, 83][index % 3],
+      y: 7 + Math.floor(index / 3) * 14,
+    } : node),
+    [isCompactMap],
+  );
+  const activeIllustrations = activeBeat.nodes
+    .map((nodeId) => nodes.find((node) => node.id === nodeId))
+    .filter((node) => node && revealedNodes.has(node.id));
 
   useEffect(() => {
     fetch("episode-82-transcript.json")
       .then((response) => response.json())
       .then((document: TranscriptDocument) => setTranscript(document.segments))
       .catch(() => setTranscript([]));
+  }, []);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 700px)");
+    const updateMapLayout = () => setIsCompactMap(query.matches);
+    updateMapLayout();
+    query.addEventListener("change", updateMapLayout);
+    return () => query.removeEventListener("change", updateMapLayout);
   }, []);
 
   useEffect(() => {
@@ -149,6 +169,12 @@ export default function Home() {
     requestAnimationFrame(() => mapPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
 
+  function focusIllustration(nodeId: string) {
+    setSelectedConnection(null);
+    setSelectedNode(nodeId);
+    requestAnimationFrame(() => mapPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  }
+
   const focusedConnection = selectedConnection ?? latestConnection;
 
   return (
@@ -172,8 +198,8 @@ export default function Home() {
             <span><small>THE STORY BEGINS</small><strong>1763</strong></span>
           </div>
           <h1>What could Pepsi, videotape, and vodka possibly have in common?</h1>
-          <p>Press play and watch Dan R. Morris’s answer assemble itself—one person, object, date, journey, and hidden connection at a time.</p>
-          <button onClick={() => { seek(0); togglePlay(); }}>{isPlaying ? "PAUSE THE STORY" : "PLAY & START DRAWING"} <b>{isPlaying ? "Ⅱ" : "▶"}</b></button>
+          <p>Press play and watch Dan R. Morris’s answer assemble itself—one illustrated person, object, date, journey, and hidden connection at a time.</p>
+          <button onClick={() => { seek(0); togglePlay(); }}>{isPlaying ? "PAUSE THE STORY" : "PLAY & BUILD THE PATH"} <b>{isPlaying ? "Ⅱ" : "▶"}</b></button>
         </div>
         <aside><img src="dan-r-morris.png" alt="Dan R. Morris" /><span>TOLD BY</span><strong>Dan R. Morris</strong><small>Award-winning storyteller and host of Tracing The Path</small></aside>
       </section>
@@ -187,18 +213,22 @@ export default function Home() {
             <h2>{activeBeat.title}</h2>
             <p>{activeBeat.description}</p>
           </div>
+          <div className="beat-illustrations" aria-live="polite">
+            <span>ON THE MAP NOW</span>
+            {activeIllustrations.length ? <div>{activeIllustrations.map((node) => <button key={node!.id} onClick={() => focusIllustration(node!.id)}><img src={node!.image} alt="" loading="lazy" decoding="async" /><b>{node!.label}</b></button>)}</div> : <p>Keep listening—the next illustration will appear as Dan introduces it.</p>}
+          </div>
           {activeBeat.route && <div className="route-card"><span>WHERE THE PATH MOVES</span><div><b>{activeBeat.route[0]}</b><i>→</i><b>{activeBeat.route[1]}</b></div></div>}
           <div className="takeaway"><span>✦</span><p><strong>WHAT TO NOTICE</strong>{activeBeat.takeaway}</p></div>
         </aside>
 
         <section ref={mapPanelRef} className="map-panel" aria-label="Animated story connection map">
           <HistoricalTimeline activeIndex={activeIndex} />
-          <div className="map-heading"><span>THE STORY, DRAWN AS DAN TELLS IT</span><div className="drawing-status"><i />{isPlaying ? "DRAWING NOW" : "PRESS PLAY TO DRAW"}</div><small>{revealedNodes.size}/{nodes.length} drawings · {revealedConnections.length}/{connections.length} links</small></div>
+          <div className="map-heading"><span>THE PATH ASSEMBLES AS DAN TELLS IT</span><div className="drawing-status"><i />{isPlaying ? "ADDING TO THE PATH" : "PRESS PLAY TO BUILD"}</div><small>{revealedNodes.size}/{nodes.length} illustrations · {revealedConnections.length}/{connections.length} links</small></div>
           <div className="map-canvas">
             <div className="paper-grid" />
             {connections.map((connection, index) => {
-              const start = nodes.find((node) => node.id === connection.from)!;
-              const end = nodes.find((node) => node.id === connection.to)!;
+              const start = positionedNodes.find((node) => node.id === connection.from)!;
+              const end = positionedNodes.find((node) => node.id === connection.to)!;
               const dx = end.x - start.x;
               const dy = end.y - start.y;
               const length = Math.sqrt(dx * dx + dy * dy).toFixed(3);
@@ -215,7 +245,7 @@ export default function Home() {
                 ><i /></button>
               );
             })}
-            {nodes.map((node, nodeIndex) => {
+            {positionedNodes.map((node, nodeIndex) => {
               const revealed = revealedNodes.has(node.id);
               const active = activeBeat.nodes.includes(node.id);
               return (
@@ -226,7 +256,7 @@ export default function Home() {
                   onClick={() => revealed && setSelectedNode(node.id === selectedNode ? null : node.id)}
                   aria-label={`${node.label}, ${node.historicalDate}`}
                 >
-                  <span className="sketch-frame"><img src={node.image} alt="" /><i className="hatch h1" /><i className="hatch h2" /><i className="hatch h3" /><span className="pencil-tip">✎</span></span>
+                  <span className="sketch-frame"><img src={node.image} alt="" loading="lazy" decoding="async" /><i className="hatch h1" /><i className="hatch h2" /><i className="hatch h3" /><span className="pencil-tip">✎</span></span>
                   <strong>{node.label}</strong>
                   <small>{node.historicalDate}</small>
                 </button>
@@ -236,9 +266,9 @@ export default function Home() {
               const node = nodes.find((item) => item.id === selectedNode)!;
               return <div className="node-detail"><button onClick={() => setSelectedNode(null)} aria-label="Close detail">×</button><span>{node.historicalDate}</span><strong>{node.label}</strong><p>{node.description}</p><button className="detail-replay" onClick={() => seek(node.firstSeen, true)}>HEAR THE INTRODUCTION · {formatTime(node.firstSeen)} ▶</button></div>;
             })()}
-            {focusedConnection && !selectedNode && <button className="connection-detail" onClick={() => seek(focusedConnection.revealAt, true)}><span>LATEST CONNECTION</span><strong>{focusedConnection.label}</strong><p>{focusedConnection.explanation}</p><b>REPLAY AT {formatTime(focusedConnection.revealAt)} ▶</b></button>}
           </div>
-          <div className="map-legend"><small>Drawings stay in place for spatial memory. Select any drawing or revealed line to hear its explanation.</small></div>
+          {focusedConnection && !selectedNode && <button className="connection-detail" onClick={() => seek(focusedConnection.revealAt, true)}><span>LATEST CONNECTION</span><strong>{focusedConnection.label}</strong><p>{focusedConnection.explanation}</p><b>REPLAY AT {formatTime(focusedConnection.revealAt)} ▶</b></button>}
+          <div className="map-legend"><small>Illustrations stay in place for spatial memory. Select any image or revealed line to hear its explanation.</small></div>
         </section>
       </section>
 
@@ -261,22 +291,22 @@ export default function Home() {
       </section>
 
       <section className="journey">
-        <div className="journey-intro"><span>THE EPISODE, CHAPTER BY CHAPTER</span><h2>Jump anywhere without losing the drawing.</h2></div>
-        <p className="journey-lede">Each chapter now comes directly from the timestamped transcript. Choosing one returns you to the drawing, moves historical time, and cues the audio.</p>
+        <div className="journey-intro"><span>THE EPISODE, CHAPTER BY CHAPTER</span><h2>Jump anywhere without losing the path.</h2></div>
+        <p className="journey-lede">Each chapter now comes directly from the timestamped transcript. Choosing one returns you to the map, moves historical time, and cues the audio.</p>
         <div className="chapter-grid">
           {storyBeats.map((beat, i) => {
             const beatNodes = beat.nodes.map((nodeId) => nodes.find((node) => node.id === nodeId)).filter(Boolean);
             return <button key={beat.time} onClick={() => showBeatOnMap(i)} className={`chapter-card ${i === activeIndex ? "active" : ""}`} aria-pressed={i === activeIndex}>
               <span className="chapter-card-top"><b>{String(i + 1).padStart(2, "0")}</b><small>{formatTime(beat.time)} · {beat.year}</small></span>
-              <span className="chapter-art" aria-hidden="true">{beatNodes.slice(0, 4).map((node) => <img key={node!.id} src={node!.image} alt="" />)}</span>
+              <span className="chapter-art" aria-hidden="true">{beatNodes.slice(0, 4).map((node) => <img key={node!.id} src={node!.image} alt="" loading="lazy" decoding="async" />)}</span>
               <span className="chapter-kicker">{beat.kicker}</span><strong>{beat.title}</strong><p>{beat.description}</p>
-              <span className="chapter-action">{i === activeIndex ? "VIEWING ON DRAWING" : "JUMP TO DRAWING"}<b>↑</b></span>
+              <span className="chapter-action">{i === activeIndex ? "VIEWING ON MAP" : "JUMP TO MAP"}<b>↑</b></span>
             </button>;
           })}
         </div>
       </section>
 
-      <section className="final-map"><span>WHEN THE LAST LINE IS DRAWN</span><h2>The episode becomes a map you can replay.</h2><p>People, products, political systems, inventions, and borders remain connected in one accumulated view. Return to any drawing or line to hear how Dan introduced it.</p><button onClick={() => { seek(DURATION - 3); mapPanelRef.current?.scrollIntoView({ behavior: "smooth" }); }}>REVEAL THE COMPLETED PATH ↑</button></section>
+      <section className="final-map"><span>WHEN THE LAST CONNECTION APPEARS</span><h2>The episode becomes a map you can replay.</h2><p>People, products, political systems, inventions, and borders remain connected in one accumulated view. Return to any illustration or line to hear how Dan introduced it.</p><button onClick={() => { seek(DURATION - 3); mapPanelRef.current?.scrollIntoView({ behavior: "smooth" }); }}>REVEAL THE COMPLETED PATH ↑</button></section>
 
       <section className="host-feature">
         <div className="host-photo-wrap"><img src="dan-r-morris.png" alt="Dan R. Morris, host of Tracing The Path" /><span>YOUR STORYTELLER</span></div>
@@ -286,7 +316,7 @@ export default function Home() {
 
       <footer><span>TRACING THE PATH</span><p>Hosted by Dan R. Morris · Everyday things. Extraordinary connections.</p><a href="https://podcasts.apple.com/us/podcast/tracing-the-path-the-connected-20th-century/id1476334630" target="_blank" rel="noreferrer">VIEW ON APPLE PODCASTS ↗</a></footer>
 
-      {showGuide && <div className="modal-backdrop" role="button" tabIndex={0} aria-label="Close exploration guide" onKeyDown={(event) => { if (event.key === "Escape" || event.key === "Enter") setShowGuide(false); }} onClick={(event) => { if (event.target === event.currentTarget) setShowGuide(false); }}><div className="guide-modal" role="dialog" aria-modal="true" aria-labelledby="guide-title"><button onClick={() => setShowGuide(false)} aria-label="Close guide">×</button><span>HOW TO EXPLORE</span><h2 id="guide-title">Hear it. See it. Follow it.</h2><ol><li><b>01</b><p><strong>Press play</strong>Drawings appear only when Dan introduces them.</p></li><li><b>02</b><p><strong>Watch history time</strong>The upper timeline jumps backward and forward independently of the audio scrubber.</p></li><li><b>03</b><p><strong>Select the map</strong>Every drawing and connection can replay its own explanation.</p></li><li><b>04</b><p><strong>Open the transcript</strong>Follow, search visually, or jump from any timestamp.</p></li></ol><button className="start-button" onClick={() => { setShowGuide(false); seek(0, true); }}>START THE EPISODE →</button></div></div>}
+      {showGuide && <div className="modal-backdrop" role="button" tabIndex={0} aria-label="Close exploration guide" onKeyDown={(event) => { if (event.key === "Escape" || event.key === "Enter") setShowGuide(false); }} onClick={(event) => { if (event.target === event.currentTarget) setShowGuide(false); }}><div className="guide-modal" role="dialog" aria-modal="true" aria-labelledby="guide-title"><button onClick={() => setShowGuide(false)} aria-label="Close guide">×</button><span>HOW TO EXPLORE</span><h2 id="guide-title">Hear it. See it. Follow it.</h2><ol><li><b>01</b><p><strong>Press play</strong>Illustrations appear only when Dan introduces them.</p></li><li><b>02</b><p><strong>Watch history time</strong>The upper timeline jumps backward and forward independently of the audio scrubber.</p></li><li><b>03</b><p><strong>Select the map</strong>Every illustration and connection can replay its own explanation.</p></li><li><b>04</b><p><strong>Open the transcript</strong>Follow, search visually, or jump from any timestamp.</p></li></ol><button className="start-button" onClick={() => { setShowGuide(false); seek(0, true); }}>START THE EPISODE →</button></div></div>}
     </main>
   );
 }

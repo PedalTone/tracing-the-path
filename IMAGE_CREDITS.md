@@ -2,7 +2,7 @@
 
 Historical images in the animated connection map are presented in a monochrome, sepia-toned crop. Links below lead to the original files and full license details.
 
-The thirteen hand-drawn connection-map vignettes were generated specifically for this visual listening edition with OpenAI image generation. They use historical subjects as visual references but are new editorial illustrations, not altered archival photographs.
+The twenty-one hand-drawn connection-map vignettes were generated specifically for this visual listening edition with OpenAI image generation. They use historical subjects as visual references but are new editorial illustrations, not altered archival photographs.
 
 - **Cold War — Berlin Wall:** [Noir](https://commons.wikimedia.org/wiki/File:Berlinermauer.jpg), CC BY-SA 3.0.
 - **Moscow — Kremlin:** [Pavel Kazachkov](https://commons.wikimedia.org/wiki/File:Moscow_Kremlin_(8281675670).jpg), CC BY 2.0.
