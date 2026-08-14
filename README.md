@@ -2,6 +2,8 @@
 
 This visual listening edition synchronizes Episode 82, “When Pepsi Cracked the Iron Curtain,” with a transcript-driven historical timeline, progressively drawn story graph, geography cues, and replayable people and connections. Tracing The Path branding and host Dan R. Morris remain central throughout the experience.
 
+The map uses thirteen project-specific ink-and-graphite illustrations created in a unified visual-scribing style. The drawings are stored as individual `public/sketch-*.png` assets and progressively constructed by the synchronized rendering layer.
+
 ## Transcript foundation
 
 The complete 41:42 podcast audio was transcribed locally with `whisper.cpp` (`small.en`). The published transcript contains 366 timestamped segments. Proper names central to the episode—such as Alexander M. Poniatoff, Donald Kendall, Stolichnaya, Barney Oldfield, and Charles Guth—received a manual correction pass.
