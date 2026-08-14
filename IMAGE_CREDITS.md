@@ -18,3 +18,12 @@ The thirteen hand-drawn connection-map vignettes were generated specifically for
 - **Newsreel camera:** [Imperial War Museums, “7 Cameras Used To Film War”](https://www.iwm.org.uk/history/7-cameras-used-to-film-war).
 
 Podcast cover art, episode art, and host photography are used to identify and represent *Tracing The Path* and Dan R. Morris.
+
+## Apollo 11 sketch-animation demo
+
+The demo uses public-domain government portraits as lightly posterized underdrawings beneath animated hand-drawn ink strokes.
+
+- **John F. Kennedy:** [White House color portrait via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:John_F._Kennedy,_White_House_color_photo_portrait.jpg), public domain.
+- **Neil Armstrong:** [NASA image S69-31741](https://images.nasa.gov/details/S69-31741), public domain.
+- **Buzz Aldrin:** [NASA image S69-31743](https://images.nasa.gov/details/S69-31743), public domain.
+- **Michael Collins:** [NASA image S69-31742](https://images.nasa.gov/details/S69-31742), public domain.
