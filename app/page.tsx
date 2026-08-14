@@ -240,7 +240,7 @@ export default function Home() {
                   className={`map-node node-${node.id} ${node.type} ${revealed ? "revealed" : ""} ${active ? "active" : ""}`}
                   style={{ left: `${node.x}%`, top: `${node.y}%`, "--draw-delay": `${(nodeIndex % 3) * 120}ms` } as React.CSSProperties}
                   onClick={() => revealed && setSelectedNode(node.id === selectedNode ? null : node.id)}
-                  aria-label={`${node.label}, ${node.type}`}
+                  aria-label={node.label}
                 >
                   <span className="sketch-frame">
                     {node.image ? <img src={node.image} alt="" /> : <b className="object-sketch">{node.icon}</b>}
@@ -248,20 +248,18 @@ export default function Home() {
                     <span className="pencil-tip">✎</span>
                   </span>
                   <strong>{node.label}</strong>
-                  <small>{node.type}</small>
                 </button>
               );
             })}
             {selectedNode && (
               <div className="node-detail">
                 <button onClick={() => setSelectedNode(null)} aria-label="Close detail">×</button>
-                <span>{nodes.find((node) => node.id === selectedNode)?.type}</span>
                 <strong>{nodes.find((node) => node.id === selectedNode)?.label}</strong>
                 <p>Appears in {storyBeats.filter((beat) => beat.nodes.includes(selectedNode)).length} chapter{storyBeats.filter((beat) => beat.nodes.includes(selectedNode)).length === 1 ? "" : "s"} of this path.</p>
               </div>
             )}
           </div>
-          <div className="map-legend"><span><i className="legend-person" />Person</span><span><i className="legend-thing" />Product / thing</span><span><i className="legend-event" />Event / idea</span><small>Click a revealed element to inspect it</small></div>
+          <div className="map-legend"><small>Click a revealed element to inspect it</small></div>
         </section>
       </section>
 
