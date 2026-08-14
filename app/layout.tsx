@@ -15,8 +15,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title,
     description,
-    openGraph: { title, description, type: "website", images: [{ url: `${origin}/og.png`, width: 1536, height: 910, alt: "Tracing The Path episode connection map" }] },
-    twitter: { card: "summary_large_image", title, description, images: [`${origin}/og.png`] },
+    openGraph: { title, description, type: "website", images: [{ url: `${origin}/pepsi-episode-art.jpg`, width: 1200, height: 1200, alt: "When Pepsi Cracked the Iron Curtain — Tracing The Path" }] },
+    twitter: { card: "summary_large_image", title, description, images: [`${origin}/pepsi-episode-art.jpg`] },
   };
 }
 

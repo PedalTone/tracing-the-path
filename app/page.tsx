@@ -15,6 +15,16 @@ type StoryBeat = {
   nodes: string[];
 };
 
+type MapNode = {
+  id: string;
+  label: string;
+  type: "idea" | "place" | "event" | "thing" | "person";
+  icon?: string;
+  image?: string;
+  x: number;
+  y: number;
+};
+
 const storyBeats: StoryBeat[] = [
   {
     time: 0,
@@ -99,18 +109,18 @@ const storyBeats: StoryBeat[] = [
   },
 ];
 
-const nodes = [
-  { id: "cold-war", label: "Cold War", type: "idea", icon: "✦", x: 50, y: 10 },
-  { id: "moscow", label: "Moscow", type: "place", icon: "⌂", x: 18, y: 27 },
-  { id: "exhibition", label: "U.S. Exhibition", type: "event", icon: "▤", x: 50, y: 31 },
-  { id: "ampex", label: "Ampex", type: "thing", icon: "▣", x: 82, y: 27 },
-  { id: "nixon", label: "Richard Nixon", type: "person", initials: "RN", x: 30, y: 51 },
-  { id: "khrushchev", label: "Nikita Khrushchev", type: "person", initials: "NK", x: 70, y: 51 },
-  { id: "pepsi", label: "Pepsi", type: "thing", icon: "●", x: 50, y: 65 },
-  { id: "vodka", label: "Stolichnaya", type: "thing", icon: "♜", x: 18, y: 76 },
-  { id: "soviet-trade", label: "Barter deal", type: "idea", icon: "⇄", x: 82, y: 76 },
-  { id: "fleet", label: "The fleet", type: "thing", icon: "≋", x: 35, y: 92 },
-  { id: "putin", label: "Vladimir Putin", type: "person", initials: "VP", x: 68, y: 92 },
+const nodes: MapNode[] = [
+  { id: "cold-war", label: "Cold War", type: "idea", icon: "✦", x: 50, y: 8 },
+  { id: "moscow", label: "Moscow", type: "place", icon: "МОСКВА", x: 17, y: 24 },
+  { id: "exhibition", label: "U.S. Exhibition", type: "event", image: "kitchen-debate.jpg", x: 50, y: 25 },
+  { id: "ampex", label: "Ampex videotape", type: "thing", icon: "AMPEX", x: 83, y: 24 },
+  { id: "nixon", label: "Richard Nixon", type: "person", image: "richard-nixon.jpg", x: 28, y: 46 },
+  { id: "khrushchev", label: "Nikita Khrushchev", type: "person", image: "nikita-khrushchev.jpg", x: 72, y: 46 },
+  { id: "pepsi", label: "A cup of Pepsi", type: "thing", icon: "PEPSI", x: 50, y: 60 },
+  { id: "vodka", label: "Stolichnaya", type: "thing", icon: "VODKA", x: 17, y: 73 },
+  { id: "soviet-trade", label: "Barter deal", type: "idea", icon: "⇄", x: 83, y: 73 },
+  { id: "fleet", label: "The Pepsi fleet", type: "thing", icon: "≋", x: 34, y: 90 },
+  { id: "putin", label: "Vladimir Putin", type: "person", icon: "VP", x: 70, y: 90 },
 ];
 
 const connections = [
@@ -183,17 +193,21 @@ export default function Home() {
     <main>
       <header className="topbar">
         <a className="brand" href="#top" aria-label="Tracing The Path home">
-          <span className="brand-mark">T</span>
-          <span><strong>TRACING THE PATH</strong><small>THE CONNECTED 20TH CENTURY</small></span>
+          <img className="brand-cover" src="tracing-the-path-cover.jpg" alt="" />
+          <span><strong>TRACING THE PATH</strong><small>THE INTER-CONNECTED 20TH CENTURY</small></span>
         </a>
-        <div className="header-meta"><span>EPISODE 82</span><i />A VISUAL LISTENING EXPERIENCE</div>
+        <div className="host-chip"><img src="dan-r-morris.png" alt="" /><span>HOSTED &amp; NARRATED BY<strong>DAN R. MORRIS</strong></span></div>
         <button className="about-button" onClick={() => setShowGuide(true)}>HOW TO EXPLORE <span>↗</span></button>
       </header>
 
       <section className="experience" id="top">
         <aside className="story-panel">
+          <div className="episode-identity">
+            <img src="pepsi-episode-art.jpg" alt="When Pepsi Cracked the Iron Curtain episode artwork" />
+            <div><span>EPISODE 82</span><strong>A story by<br />Dan R. Morris</strong></div>
+          </div>
           <div className="eyebrow"><span>NOW TRACING</span><b>{activeBeat.year}</b></div>
-          <h1>When Pepsi Cracked<br /><em>the Iron Curtain</em></h1>
+          <h1>When Pepsi Cracked <em>the Iron Curtain</em></h1>
           <div className="beat-copy" key={activeBeat.title}>
             <span className="beat-kicker">{activeBeat.kicker}</span>
             <h2>{activeBeat.title}</h2>
@@ -203,7 +217,7 @@ export default function Home() {
         </aside>
 
         <section className="map-panel" aria-label="Animated story connection map">
-          <div className="map-heading"><span>THE CONNECTION MAP</span><small>{revealedNodes.size} of {nodes.length} elements revealed</small></div>
+          <div className="map-heading"><span>THE STORY, DRAWN AS DAN TELLS IT</span><div className="drawing-status"><i />{isPlaying ? "DRAWING NOW" : "PRESS PLAY TO DRAW"}</div><small>{revealedNodes.size} of {nodes.length} connections revealed</small></div>
           <div className="map-canvas">
             <div className="paper-grid" />
             {connections.map(([from, to], index) => {
@@ -215,20 +229,24 @@ export default function Home() {
               const angle = (Math.atan2(dy, dx) * (180 / Math.PI)).toFixed(3);
               const revealed = revealedNodes.has(from) && revealedNodes.has(to);
               const active = activeBeat.nodes.includes(from) && activeBeat.nodes.includes(to);
-              return <span key={index} className={`connection ${revealed ? "revealed" : ""} ${active ? "active" : ""}`} style={{ left: `${start.x}%`, top: `${start.y}%`, width: `${length}%`, transform: `rotate(${angle}deg)` }} />;
+              return <span key={index} className={`connection ${revealed ? "revealed" : ""} ${active ? "active" : ""}`} style={{ left: `${start.x}%`, top: `${start.y}%`, width: `${length}%`, transform: `rotate(${angle}deg)` }}><i /></span>;
             })}
-            {nodes.map((node) => {
+            {nodes.map((node, nodeIndex) => {
               const revealed = revealedNodes.has(node.id);
               const active = activeBeat.nodes.includes(node.id);
               return (
                 <button
-                  key={node.id}
+                  key={`${node.id}-${revealed ? activeIndex : "hidden"}`}
                   className={`map-node ${node.type} ${revealed ? "revealed" : ""} ${active ? "active" : ""}`}
-                  style={{ left: `${node.x}%`, top: `${node.y}%` }}
+                  style={{ left: `${node.x}%`, top: `${node.y}%`, "--draw-delay": `${(nodeIndex % 3) * 120}ms` } as React.CSSProperties}
                   onClick={() => revealed && setSelectedNode(node.id === selectedNode ? null : node.id)}
                   aria-label={`${node.label}, ${node.type}`}
                 >
-                  <span className="sketch-ring"><b>{node.initials || node.icon}</b></span>
+                  <span className="sketch-frame">
+                    {node.image ? <img src={node.image} alt="" /> : <b className="object-sketch">{node.icon}</b>}
+                    <i className="hatch h1" /><i className="hatch h2" /><i className="hatch h3" />
+                    <span className="pencil-tip">✎</span>
+                  </span>
                   <strong>{node.label}</strong>
                   <small>{node.type}</small>
                 </button>
@@ -272,7 +290,13 @@ export default function Home() {
         <div className="path-list">{storyBeats.map((beat, i) => <button key={beat.time} onClick={() => seek(beat.time)} className={i === activeIndex ? "active" : ""}><span>{String(i + 1).padStart(2, "0")}</span><small>{beat.year}</small><strong>{beat.title}</strong><i>→</i></button>)}</div>
       </section>
 
-      <footer><span>TRACING THE PATH</span><p>Everyday things. Extraordinary connections.</p><a href="https://podcasts.apple.com/us/podcast/tracing-the-path-the-connected-20th-century/id1476334630" target="_blank" rel="noreferrer">VIEW ON APPLE PODCASTS ↗</a></footer>
+      <section className="host-feature">
+        <div className="host-photo-wrap"><img src="dan-r-morris.png" alt="Dan R. Morris, host of Tracing The Path" /><span>YOUR STORYTELLER</span></div>
+        <div className="host-story"><span>THE VOICE BEHIND THE PATH</span><h2>Dan R. Morris</h2><h3>Award-winning storyteller. 20th-century historian. Tireless connector of dots.</h3><p>Dan begins with something familiar—a product, a person, a phrase—and follows the forgotten decisions that made it matter. This visual edition lets you watch those connections take shape while he tells the story.</p><a href="https://audienceindustries.com/about-tracing-the-path" target="_blank" rel="noreferrer">MEET DAN &amp; TRACING THE PATH ↗</a></div>
+        <img className="host-cover" src="tracing-the-path-cover.jpg" alt="Tracing The Path podcast cover" />
+      </section>
+
+      <footer><span>TRACING THE PATH</span><p>Hosted by Dan R. Morris · Everyday things. Extraordinary connections.</p><a href="https://podcasts.apple.com/us/podcast/tracing-the-path-the-connected-20th-century/id1476334630" target="_blank" rel="noreferrer">VIEW ON APPLE PODCASTS ↗</a></footer>
 
       {showGuide && <div className="modal-backdrop" onClick={() => setShowGuide(false)}><div className="guide-modal" onClick={(event) => event.stopPropagation()}><button onClick={() => setShowGuide(false)} aria-label="Close guide">×</button><span>HOW TO EXPLORE</span><h2>Listen. Watch. Follow the path.</h2><ol><li><b>01</b><p><strong>Press play</strong>The map reveals people, places, and objects with the story.</p></li><li><b>02</b><p><strong>Choose a chapter</strong>Jump to any connection from the timeline or path list.</p></li><li><b>03</b><p><strong>Inspect the map</strong>Select any revealed element to see where it returns.</p></li></ol><button className="start-button" onClick={() => { setShowGuide(false); togglePlay(); }}>START THE EPISODE →</button></div></div>}
     </main>
