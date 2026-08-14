@@ -140,6 +140,7 @@ function formatTime(seconds: number) {
 
 export default function Home() {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const mapPanelRef = useRef<HTMLElement>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
@@ -189,6 +190,14 @@ export default function Home() {
     setCurrentTime(time);
   }
 
+  function showBeatOnMap(index: number) {
+    seek(storyBeats[index].time);
+    setSelectedNode(null);
+    requestAnimationFrame(() => {
+      mapPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   return (
     <main>
       <header className="topbar">
@@ -216,7 +225,7 @@ export default function Home() {
           <div className="listen-note"><span>✦</span><p><strong>Listen for the connection</strong>Watch how ordinary products become unlikely diplomats.</p></div>
         </aside>
 
-        <section className="map-panel" aria-label="Animated story connection map">
+        <section ref={mapPanelRef} className="map-panel" aria-label="Animated story connection map">
           <div className="map-heading"><span>THE STORY, DRAWN AS DAN TELLS IT</span><div className="drawing-status"><i />{isPlaying ? "DRAWING NOW" : "PRESS PLAY TO DRAW"}</div><small>{revealedNodes.size} of {nodes.length} connections revealed</small></div>
           <div className="map-canvas">
             <div className="paper-grid" />
@@ -283,9 +292,34 @@ export default function Home() {
       </section>
 
       <section className="journey">
-        <div><span>THE PATH SO FAR</span><h2>History rarely moves in a straight line.</h2></div>
-        <p>Follow the chain from a Moscow exhibition to a kitchen argument, a cup of cola, a bottle of vodka—and finally a fleet of warships.</p>
-        <div className="path-list">{storyBeats.map((beat, i) => <button key={beat.time} onClick={() => seek(beat.time)} className={i === activeIndex ? "active" : ""}><span>{String(i + 1).padStart(2, "0")}</span><small>{beat.year}</small><strong>{beat.title}</strong><i>→</i></button>)}</div>
+        <div className="journey-intro"><span>THE PATH SO FAR</span><h2>Pick up the story at any connection.</h2></div>
+        <p className="journey-lede">Choose a chapter to jump the audio and bring its people, objects, and connections into view on the drawing.</p>
+        <div className="chapter-grid">
+          {storyBeats.map((beat, i) => {
+            const beatNodes = beat.nodes
+              .map((nodeId) => nodes.find((node) => node.id === nodeId))
+              .filter((node): node is MapNode => Boolean(node));
+
+            return (
+              <button
+                key={beat.time}
+                onClick={() => showBeatOnMap(i)}
+                className={`chapter-card ${i === activeIndex ? "active" : ""}`}
+                aria-pressed={i === activeIndex}
+                aria-label={`Show ${beat.title} on the drawing`}
+              >
+                <span className="chapter-card-top"><b>{String(i + 1).padStart(2, "0")}</b><small>{beat.year}</small></span>
+                <span className="chapter-art" aria-hidden="true">
+                  {beatNodes.map((node) => <img key={node.id} src={node.image} alt="" />)}
+                </span>
+                <span className="chapter-kicker">{beat.kicker}</span>
+                <strong>{beat.title}</strong>
+                <p>{beat.description}</p>
+                <span className="chapter-action">{i === activeIndex ? "VIEWING ON MAP" : "SHOW ON MAP"}<b>↑</b></span>
+              </button>
+            );
+          })}
+        </div>
       </section>
 
       <section className="host-feature">

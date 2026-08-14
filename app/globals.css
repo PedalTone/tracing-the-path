@@ -105,4 +105,57 @@ footer { background:#dfc499; }
 @media (max-width:1050px) { .host-feature { grid-template-columns:1fr 1fr; }.host-cover { display:none; }.host-chip { display:none; }.topbar { grid-template-columns:1fr auto; } }
 @media (max-width:900px) { .experience { grid-template-columns:1fr; }.story-panel { min-height:620px; }.episode-identity img { width:96px; height:96px; }.map-canvas { min-height:760px; }.map-heading { flex-wrap:wrap; height:auto; min-height:68px; padding:13px 24px; }.map-heading small { margin-left:auto; }.host-feature { grid-template-columns:1fr; }.host-photo-wrap { min-height:520px; }.host-story { padding:60px 8vw 70px; } }
 @media (max-width:600px) { .topbar { height:78px; }.brand-cover { width:46px; height:46px; }.brand strong { font-size:11px; }.story-panel { padding:30px 24px 34px; min-height:690px; }.episode-identity img { width:84px; height:84px; }.story-panel h1 { font-size:38px; margin:20px 0 26px; }.map-heading>span { flex-basis:100%; }.drawing-status { order:3; }.map-heading small { font-size:7px; }.map-canvas { min-height:720px; overflow:hidden; }.map-node { min-width:92px; }.sketch-frame,.node-cold-war .sketch-frame,.node-moscow .sketch-frame,.node-ampex .sketch-frame,.node-vodka .sketch-frame,.node-soviet-trade .sketch-frame,.node-fleet .sketch-frame,.node-pepsi .sketch-frame { width:68px; height:58px; }.map-node.person .sketch-frame { width:58px; height:68px; }.map-node.event .sketch-frame { width:72px; height:58px; }.map-node strong { font-size:9px; max-width:100px; white-space:normal; }.map-node small { font-size:6px; }.host-photo-wrap { min-height:430px; }.host-story h2 { font-size:52px; }.host-story h3 { font-size:19px; }.host-story { padding:50px 24px 65px; } }
+/* Visual chapter navigator */
+.map-panel { scroll-margin-top:16px; }
+.journey { padding:88px 6vw 110px; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:22px 7vw; }
+.journey-intro h2 { font:400 clamp(34px,3.4vw,54px)/1.02 Georgia,serif; margin:14px 0 0; max-width:620px; }
+.journey-lede { font:400 19px/1.6 Georgia,serif!important; color:#555a55!important; max-width:620px!important; margin:25px 0 0!important; align-self:end; }
+.chapter-grid { grid-column:1/-1; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; margin-top:34px; border:1px solid var(--ink); background:var(--ink); }
+.chapter-card { min-height:390px; border:0; background:#f4ead6; padding:24px; display:flex; flex-direction:column; align-items:flex-start; text-align:left; cursor:pointer; position:relative; transition:transform .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease; overflow:hidden; }
+.chapter-card:hover,.chapter-card:focus-visible { z-index:1; transform:translateY(-5px); background:#ead8b6; box-shadow:0 8px 0 var(--red); outline:2px solid var(--red); outline-offset:-2px; }
+.chapter-card.active { background:var(--blue); color:var(--cream); }
+.chapter-card-top { width:100%; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid currentColor; padding-bottom:13px; margin-bottom:18px; }
+.chapter-card-top b { font:700 14px Georgia,serif; color:var(--red); }.chapter-card.active .chapter-card-top b { color:#e39b75; }
+.chapter-card-top small { font-size:12px; color:var(--muted); letter-spacing:.08em; }.chapter-card.active .chapter-card-top small { color:#d3c4ae; }
+.chapter-art { display:flex; align-items:center; min-height:72px; margin:0 0 18px 5px; }
+.chapter-art img { width:68px; height:68px; object-fit:cover; border:2px solid var(--ink); border-radius:50%; filter:grayscale(1) sepia(.35) contrast(1.25); box-shadow:3px 3px 0 rgba(159,59,37,.4); margin-left:-15px; background:var(--paper); }
+.chapter-art img:first-child { margin-left:0; }.chapter-art img:nth-child(2) { transform:rotate(3deg); }.chapter-art img:nth-child(3) { transform:rotate(-3deg); }
+.chapter-card.active .chapter-art img { border-color:var(--cream); }
+.chapter-kicker { font-size:11px; line-height:1.35; letter-spacing:.13em; font-weight:800; color:var(--red); text-transform:uppercase; margin-bottom:9px; }
+.chapter-card.active .chapter-kicker { color:#e39b75; }
+.chapter-card>strong { font:500 23px/1.08 Georgia,serif; max-width:330px; }
+.chapter-card>p { font:400 15px/1.5 Georgia,serif; color:#565a55; margin:12px 0 22px; max-width:350px; }.chapter-card.active>p { color:#d7d7ce; }
+.chapter-action { width:100%; margin-top:auto; border-top:1px solid currentColor; padding-top:14px; display:flex; justify-content:space-between; align-items:center; font-size:11px; letter-spacing:.12em; font-weight:800; }
+.chapter-action b { color:var(--red); font-size:20px; line-height:1; }.chapter-card.active .chapter-action b { color:#e39b75; }
+
+/* Readability pass: keep utility copy comfortably legible */
+.brand small { font-size:10px; }.about-button { font-size:11px; }
+.host-chip span { font-size:10px; }.episode-identity span { font-size:10px; }
+.eyebrow { font-size:11px; }.eyebrow b { font-size:11px; }
+.beat-kicker,.map-heading span,.journey>div>span,.guide-modal>span { font-size:11px; }
+.listen-note p { font-size:13px; }.listen-note strong { font-size:11px; }
+.map-heading small { font-size:10px; }.drawing-status { font-size:10px; }
+.map-node strong { font-size:14px; }.map-legend small { font-size:10px; }
+.node-detail p { font-size:13px; }
+.player-title span { font-size:10px; }.player-title small { font-size:11px; }
+.chapter-labels button { font-size:10px; }.time-row { font-size:10px; }.jump-button { font-size:10px; }
+.chapter-strip { font-size:10px; }.chapter-strip strong { font-size:11px; }
+.host-photo-wrap span { font-size:10px; }.host-story>span { font-size:11px; }.host-story p { font-size:17px; }.host-story a { font-size:10px; }
+footer p { font-size:15px; }footer a { font-size:10px; }
+.guide-modal li p { font-size:14px; }.start-button { font-size:11px; }
+
+@media (max-width:1050px) { .chapter-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:700px) {
+  .journey { display:block; padding:60px 24px 84px; }
+  .journey-lede { font-size:18px!important; margin-top:20px!important; }
+  .chapter-grid { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; overscroll-behavior-inline:contain; background:transparent; border:0; margin:34px -24px 0 0; padding:0 24px 14px 0; }
+  .chapter-card { flex:0 0 min(82vw,350px); min-height:410px; border:1px solid var(--ink); scroll-snap-align:start; }
+  .chapter-card>p { font-size:16px; }
+}
+@media (max-width:600px) {
+  .brand small { font-size:10px; }.about-button { font-size:11px; }
+  .map-heading small,.drawing-status { font-size:10px; }
+  .map-node strong { font-size:11px; line-height:1.15; }.map-legend small { font-size:10px; }
+  .chapter-labels button { font-size:10px; }.chapter-strip { font-size:10px; }
+}
 @media (prefers-reduced-motion:reduce) { * { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
